@@ -1,4 +1,6 @@
 import React from 'react';
+import Link from 'next/link';
+import Image from 'next/image';
 
 export function Footer() {
   return (
@@ -45,7 +47,16 @@ export function Footer() {
         
         <div className="flex flex-col md:flex-row justify-between items-center pt-8 border-t border-gray-800">
           <div className="flex items-center gap-4 mb-4 md:mb-0">
-            <img src="/logo.svg" alt="UltraReach.ai" className="h-8" />
+            <Link href="/" className="flex items-center">
+              <Image
+                src="/logo.png"
+                alt="UltraReach Logo"
+                width={180}
+                height={40}
+                className="h-10 w-auto"
+                priority
+              />
+            </Link>
             <span className="text-gray-400">&copy; 2025 UltraReach.ai. All rights reserved.</span>
           </div>
           <div className="flex gap-6">

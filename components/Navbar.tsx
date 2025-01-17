@@ -1,5 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 
 export function Navbar() {
   return (
@@ -7,8 +8,15 @@ export function Navbar() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
-          <Link href="/" className="flex items-center gap-2">
-            <img src="/logo.svg" alt="UltraReach.ai" className="h-8" />
+          <Link href="/" className="flex items-center">
+            <Image
+              src="/logo.png"
+              alt="UltraReach Logo"
+              width={180}
+              height={40}
+              className="h-10 w-auto"
+              priority
+            />
             <span className="font-bold text-lg">UltraReach.ai</span>
           </Link>
 

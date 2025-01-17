@@ -1,8 +1,8 @@
 'use client';
 
-import React, { useState, useEffect } from 'react';
-import { Phone, Calendar, MessageSquare, Clock, CheckCircle, ChevronRight, Sparkles, Bot, Brain, Zap, Play, ArrowRight, Star, Users, Building2, BarChart3, X } from 'lucide-react';
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import React, { useState } from 'react';
+import { Phone, Clock, CheckCircle, ChevronRight, Sparkles, Brain, Zap, Play } from 'lucide-react';
+import { Card, CardContent } from "@/components/ui/card";
 import { Header } from "@/components/header";
 
 // Pre-defined positions for floating elements
@@ -30,15 +30,8 @@ const floatingElements = [
 ];
 
 const LandingPage = () => {
-  const [scrollY, setScrollY] = useState(0);
   const [isVideoModalOpen, setIsVideoModalOpen] = useState(false);
   const [activeTab, setActiveTab] = useState('solo');
-
-  useEffect(() => {
-    const handleScroll = () => setScrollY(window.scrollY);
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
 
   const features = [
     {
@@ -286,7 +279,7 @@ const LandingPage = () => {
               </span>
             </h2>
             <p className="text-xl text-gray-400 max-w-3xl mx-auto">
-              Join thousands of real estate professionals who've transformed their business with AI
+              Here&apos;s what our clients are saying about UltraReach
             </p>
           </div>
 
@@ -324,7 +317,7 @@ const LandingPage = () => {
                       <p className="text-sm text-gray-400">{testimonial.role}</p>
                     </div>
                   </div>
-                  <p className="text-gray-300">"{testimonial.quote}"</p>
+                  <p className="text-gray-300">&quot;{testimonial.quote}&quot;</p>
                 </CardContent>
               </Card>
             ))}

@@ -1,4 +1,5 @@
-import { useState, useEffect } from 'react';
+import React from 'react';
+import Image from 'next/image';
 import { ChevronLeft, ChevronRight, Clock } from 'lucide-react';
 
 const testimonials = [
@@ -44,18 +45,20 @@ export function TeamTestimonials() {
           {testimonials.map((testimonial, index) => (
             <div key={index} className="relative p-px rounded-xl overflow-hidden bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400">
               <div className="relative p-6 bg-gray-900 rounded-xl h-full">
-                <div className="flex items-center gap-4 mb-6">
-                  <img
+                <div className="flex items-center gap-4 mb-4">
+                  <Image
                     src={testimonial.image}
                     alt={testimonial.name}
-                    className="w-16 h-16 rounded-full object-cover border-2 border-gray-800"
+                    width={48}
+                    height={48}
+                    className="rounded-full"
                   />
                   <div>
                     <h3 className="font-bold text-lg">{testimonial.name}</h3>
                     <p className="text-gray-400">{testimonial.role}</p>
                   </div>
                 </div>
-                <blockquote className="text-gray-300 mb-4">"{testimonial.quote}"</blockquote>
+                <p className="text-gray-300">&quot;{testimonial.quote}&quot;</p>
                 <div className="flex items-center gap-2 text-gray-400">
                   <Clock className="w-4 h-4" />
                   <span>{testimonial.tenure}</span>
