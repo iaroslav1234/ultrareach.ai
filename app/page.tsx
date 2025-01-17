@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useState, useEffect } from 'react';
-import { Phone, Calendar, MessageSquare, Clock, CheckCircle, ChevronRight, Sparkles, Bot, Brain, Zap } from 'lucide-react';
+import { Phone, Calendar, MessageSquare, Clock, CheckCircle, ChevronRight, Sparkles, Bot, Brain, Zap, Play, ArrowRight, Star, Users, Building2, BarChart3, X } from 'lucide-react';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Header } from "@/components/header";
 
@@ -31,6 +31,8 @@ const floatingElements = [
 
 const LandingPage = () => {
   const [scrollY, setScrollY] = useState(0);
+  const [isVideoModalOpen, setIsVideoModalOpen] = useState(false);
+  const [activeTab, setActiveTab] = useState('solo');
 
   useEffect(() => {
     const handleScroll = () => setScrollY(window.scrollY);
@@ -40,218 +42,402 @@ const LandingPage = () => {
 
   const features = [
     {
-      icon: <Bot className="w-8 h-8" />,
-      title: "Superhuman Service",
-      description: "Your AI assistant handles calls with the charm of a top agent and the efficiency of a supercomputer. Never miss a lead, day or night.",
-      highlight: "500+ calls handled simultaneously"
+      icon: <Phone className="w-8 h-8" />,
+      title: "24/7 Lead Response",
+      description: "Never miss a lead again. Our AI answers every call instantly, day or night, qualifying prospects and scheduling showings while you sleep.",
+      highlight: "100% response rate"
     },
     {
       icon: <Brain className="w-8 h-8" />,
-      title: "Deal-Closing Intelligence",
-      description: "Our AI doesn't just answer calls—it qualifies leads, schedules viewings, and nurtures relationships with machine precision.",
-      highlight: "85% lead qualification accuracy"
+      title: "Smart Lead Qualification",
+      description: "Our AI understands buyer preferences, budget, and timeline, intelligently qualifying leads and only sending you the most promising opportunities.",
+      highlight: "85% qualification accuracy"
     },
     {
       icon: <Zap className="w-8 h-8" />,
-      title: "Lightning-Fast Scaling",
-      description: "While your competition struggles with hiring and training, you'll scale instantly. One AI agent becomes hundreds at the click of a button.",
-      highlight: "Zero training time"
+      title: "Instant Appointment Setting",
+      description: "While competitors play phone tag, your AI assistant checks your calendar and schedules showings instantly, maximizing every opportunity.",
+      highlight: "3x more showings booked"
     },
     {
       icon: <Clock className="w-8 h-8" />,
-      title: "Time-Bending Efficiency",
-      description: "Imagine handling a month's worth of calls in a single day. That's the power of AI working at superhuman speed.",
+      title: "Time-Saving Automation",
+      description: "Focus on closing deals while your AI handles routine calls, follow-ups, and scheduling. It's like having a full-time assistant working 24/7.",
       highlight: "30 hours saved per week"
     }
   ];
 
+  const useCases = {
+    solo: {
+      title: "Solo Agents",
+      description: "Supercharge your productivity with an AI assistant that handles calls 24/7, qualifies leads, and schedules showings while you focus on closing deals.",
+      features: [
+        "Instant response to every inquiry",
+        "Smart lead qualification",
+        "Automated showing scheduling",
+        "24/7 property information"
+      ]
+    },
+    teams: {
+      title: "Real Estate Teams",
+      description: "Scale your team's efficiency with AI that distributes leads, coordinates showings, and ensures no opportunity falls through the cracks.",
+      features: [
+        "Intelligent lead routing",
+        "Team calendar coordination",
+        "Cross-listing promotion",
+        "Performance tracking"
+      ]
+    },
+    brokerages: {
+      title: "Large Brokerages",
+      description: "Transform your entire operation with AI calling that supports all your agents, ensuring consistent lead handling and maximum conversion.",
+      features: [
+        "Multi-agent support",
+        "Centralized lead management",
+        "Brand-consistent communication",
+        "Advanced analytics"
+      ]
+    }
+  };
+
   return (
     <div className="min-h-screen bg-black text-white">
       <Header />
+      
       {/* Hero Section */}
       <div className="relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 opacity-10 animate-gradient"></div>
-        
-        {/* Floating elements */}
-        <div className="absolute inset-0 overflow-hidden">
-          {floatingElements.map((element, i) => (
+        <div className="max-w-7xl mx-auto px-4 pt-28 pb-12 sm:px-6 lg:px-8 relative">
+          <div className="text-center">
+            <div className="flex justify-center mb-6">
+              <div className="relative">
+                <Sparkles className="w-10 h-10 md:w-12 md:h-12 text-blue-500 animate-pulse" />
+                <div className="absolute inset-0 bg-blue-500 blur-xl opacity-20 animate-pulse"></div>
+              </div>
+            </div>
+            <h1 className="text-4xl sm:text-5xl md:text-7xl font-bold tracking-tight text-white mb-6">
+              Your AI Army of<br className="hidden sm:block" />
+              <span className="text-transparent bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text [-webkit-background-clip:text]">Super Agents</span>
+            </h1>
+            <p className="mt-3 max-w-md mx-auto text-lg sm:text-xl text-gray-400 md:mt-5 md:text-2xl md:max-w-3xl">
+              While other agents sleep, your AI assistant closes deals.
+              <span className="text-transparent bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text [-webkit-background-clip:text] block mt-2">Welcome to the future of real estate.</span>
+            </p>
+            <div className="mt-8 md:mt-10 flex flex-col sm:flex-row justify-center gap-4">
+              <button className="group relative px-6 sm:px-8 py-3 sm:py-4 bg-blue-600 rounded-full text-base sm:text-lg font-semibold overflow-hidden transition-all hover:bg-blue-700 w-full sm:w-auto">
+                Start Free Trial
+                <div className="absolute inset-0 bg-white opacity-0 group-hover:opacity-20 transition-opacity"></div>
+                <ChevronRight className="inline-block ml-2 w-4 h-4 sm:w-5 sm:h-5 group-hover:translate-x-1 transition-transform" />
+              </button>
+              <button 
+                className="group px-6 sm:px-8 py-3 sm:py-4 bg-white/10 rounded-full text-base sm:text-lg font-semibold backdrop-blur-sm hover:bg-white/20 transition-all flex items-center justify-center gap-2 w-full sm:w-auto"
+                onClick={() => setIsVideoModalOpen(true)}
+              >
+                <Play className="w-4 h-4 sm:w-5 sm:h-5" />
+                Watch Demo
+              </button>
+            </div>
+
+            {/* Stats Section */}
+            <div className="mt-16 grid grid-cols-2 gap-8 md:grid-cols-4">
+              <div>
+                <div className="text-4xl font-bold text-transparent bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text [-webkit-background-clip:text]">100%</div>
+                <div className="mt-2 text-base text-gray-400">Response Rate</div>
+              </div>
+              <div>
+                <div className="text-4xl font-bold text-transparent bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text [-webkit-background-clip:text]">24/7</div>
+                <div className="mt-2 text-base text-gray-400">Availability</div>
+              </div>
+              <div>
+                <div className="text-4xl font-bold text-transparent bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text [-webkit-background-clip:text]">85%</div>
+                <div className="mt-2 text-base text-gray-400">Lead Qualification</div>
+              </div>
+              <div>
+                <div className="text-4xl font-bold text-transparent bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text [-webkit-background-clip:text]">3x</div>
+                <div className="mt-2 text-base text-gray-400">More Showings</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Animated background elements */}
+        <div className="absolute inset-0 overflow-hidden pointer-events-none">
+          {floatingElements.map((el, index) => (
             <div
-              key={i}
-              className="absolute rounded-full opacity-20 animate-float"
+              key={index}
+              className="absolute rounded-full bg-gradient-to-r from-blue-400/10 via-purple-400/10 to-pink-400/10 animate-float"
               style={{
-                left: element.left,
-                top: element.top,
-                width: element.width,
-                height: element.height,
-                background: 'linear-gradient(45deg, rgba(59,130,246,0.5), rgba(147,51,234,0.5))',
-                animationDelay: element.delay,
-                animationDuration: element.duration
+                left: el.left,
+                top: el.top,
+                width: el.width,
+                height: el.height,
+                animationDelay: el.delay,
+                animationDuration: el.duration
               }}
             />
           ))}
         </div>
-
-        <div className="max-w-7xl mx-auto px-4 py-24 sm:px-6 lg:px-8 relative">
-          <div className="text-center">
-            <div className="flex justify-center mb-6">
-              <div className="relative">
-                <Sparkles className="w-12 h-12 text-blue-500 animate-pulse" />
-                <div className="absolute inset-0 bg-blue-500 blur-xl opacity-20 animate-pulse"></div>
-              </div>
-            </div>
-            <h1 className="text-5xl md:text-7xl font-bold tracking-tight bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text text-transparent [-webkit-background-clip:text] mb-6">
-              Your AI Army of<br />
-              Super Agents
-            </h1>
-            <p className="mt-3 max-w-md mx-auto text-xl text-gray-400 md:mt-5 md:text-2xl md:max-w-3xl">
-              While other agents sleep, your AI assistant closes deals.<br />
-              <span className="text-blue-400">Welcome to the future of real estate.</span>
-            </p>
-            <div className="mt-10 flex justify-center gap-4">
-              <button className="group relative px-8 py-4 bg-gradient-to-r from-blue-600 to-purple-600 rounded-full text-lg font-semibold overflow-hidden transition-all hover:scale-105">
-                Multiply Your Power
-                <div className="absolute inset-0 bg-white opacity-0 group-hover:opacity-20 transition-opacity"></div>
-                <ChevronRight className="inline-block ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
-              </button>
-              <button className="px-8 py-4 bg-white/10 rounded-full text-lg font-semibold backdrop-blur-sm hover:bg-white/20 transition-all">
-                See It In Action
-              </button>
-            </div>
-
-            {/* Social Proof */}
-            <div className="mt-16 flex flex-col items-center space-y-4">
-              <p className="text-sm text-gray-500 uppercase tracking-wider">Trusted by Industry Leaders</p>
-              <div className="flex flex-wrap justify-center gap-8 opacity-50">
-                <div className="h-8">Century 21</div>
-                <div className="h-8">Keller Williams</div>
-                <div className="h-8">RE/MAX</div>
-                <div className="h-8">Coldwell Banker</div>
-              </div>
-            </div>
-          </div>
-        </div>
       </div>
 
-      {/* Value Proposition Section */}
-      <div className="relative py-16">
+      {/* Features Section */}
+      <section className="py-24 relative overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent [-webkit-background-clip:text]">
-              Why Top Agents Are Switching to AI
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">
+              Supercharge Your{' '}
+              <span className="text-transparent bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text [-webkit-background-clip:text]">
+                Real Estate Business
+              </span>
             </h2>
-            <p className="mt-4 text-gray-400 text-lg">
-              The competition is still playing catch-up. Here's what they're missing:
+            <p className="text-xl text-gray-400 max-w-3xl mx-auto">
+              Our AI calling assistant works tirelessly to convert more leads into showings and deals
             </p>
           </div>
-          
-          {/* Features Grid */}
-          <div className="grid grid-cols-1 gap-8 sm:grid-cols-2">
+
+          <div className="grid md:grid-cols-2 gap-8">
             {features.map((feature, index) => (
-              <Card key={index} className="group bg-gradient-to-br from-gray-900 to-gray-800 border-gray-800 hover:border-gray-700 transition-all duration-300">
-                <CardHeader>
-                  <div className="flex items-center gap-4">
-                    <div className="p-3 rounded-lg bg-gradient-to-r from-blue-600 to-purple-600">
-                      {feature.icon}
-                    </div>
-                    <CardTitle className="text-2xl font-bold bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent [-webkit-background-clip:text]">
-                      {feature.title}
-                    </CardTitle>
+              <Card key={index} className="bg-gray-900/50 border-gray-800 hover:border-gray-700 transition-all">
+                <CardContent className="p-6">
+                  <div className="w-12 h-12 rounded-lg bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 flex items-center justify-center mb-4">
+                    {feature.icon}
                   </div>
-                </CardHeader>
-                <CardContent className="space-y-4">
-                  <CardDescription className="text-gray-400 text-lg">
-                    {feature.description}
-                  </CardDescription>
-                  <div className="text-sm font-medium text-blue-400">
-                    {feature.highlight}
+                  <h3 className="text-xl font-bold mb-2">{feature.title}</h3>
+                  <p className="text-gray-400 mb-4">{feature.description}</p>
+                  <div className="flex items-center gap-2 text-sm">
+                    <div className="w-5 h-5 rounded-full bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 flex items-center justify-center">
+                      <CheckCircle className="w-3 h-3 text-white" />
+                    </div>
+                    <span className="text-transparent bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text [-webkit-background-clip:text] font-medium">
+                      {feature.highlight}
+                    </span>
                   </div>
                 </CardContent>
               </Card>
             ))}
           </div>
         </div>
-      </div>
+      </section>
 
-      {/* ROI Calculator Section */}
-      <div className="relative py-16 bg-gradient-to-b from-gray-900 to-black">
+      {/* Use Cases Section */}
+      <section className="py-24 relative">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-white">
-              The Numbers Don't Lie
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">
+              Tailored for{' '}
+              <span className="text-transparent bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text [-webkit-background-clip:text]">
+                Real Estate Professionals
+              </span>
             </h2>
-            <p className="mt-4 text-gray-400 text-lg">
-              Your competition is still paying $4000/month for a human assistant
+            <p className="text-xl text-gray-400 max-w-3xl mx-auto">
+              Whether you're a solo agent or running a large brokerage, our AI calling solution scales with your needs
             </p>
           </div>
-          
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
-            {[
-              { value: "24/7", label: "Always-On Service" },
-              { value: "90%", label: "Cost Reduction" },
-              { value: "100x", label: "Call Capacity" },
-              { value: "0", label: "Sick Days" }
-            ].map((stat, index) => (
-              <div key={index} className="p-6 rounded-2xl bg-gradient-to-br from-gray-900 to-gray-800 border border-gray-800">
-                <div className="text-4xl font-bold bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent [-webkit-background-clip:text]">
-                  {stat.value}
-                </div>
-                <div className="mt-2 text-gray-400">{stat.label}</div>
+
+          <div className="flex justify-center gap-4 mb-12">
+            {Object.keys(useCases).map((key) => (
+              <button
+                key={key}
+                onClick={() => setActiveTab(key)}
+                className={`px-6 py-3 rounded-lg transition-all ${
+                  activeTab === key
+                    ? 'bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 text-white'
+                    : 'bg-gray-900 text-gray-400 hover:bg-gray-800'
+                }`}
+              >
+                {useCases[key].title}
+              </button>
+            ))}
+          </div>
+
+          <div className="grid md:grid-cols-2 gap-12 items-center">
+            <div>
+              <h3 className="text-2xl font-bold mb-4">{useCases[activeTab].title}</h3>
+              <p className="text-gray-400 mb-6">{useCases[activeTab].description}</p>
+              <ul className="space-y-4">
+                {useCases[activeTab].features.map((feature, index) => (
+                  <li key={index} className="flex items-center gap-3">
+                    <div className="w-5 h-5 rounded-full bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 flex items-center justify-center">
+                      <CheckCircle className="w-3 h-3 text-white" />
+                    </div>
+                    <span className="text-gray-300">{feature}</span>
+                  </li>
+                ))}
+              </ul>
+              <button className="mt-8 px-6 py-3 rounded-lg bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 text-white font-medium hover:opacity-90 transition-opacity">
+                Get Started
+              </button>
+            </div>
+            <div className="relative">
+              <div className="aspect-video rounded-xl overflow-hidden bg-gray-900/50 border border-gray-800">
+                {/* Add demo video or animation here */}
               </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Testimonials Section */}
+      <section className="py-24 relative bg-gray-900/50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">
+              Trusted by{' '}
+              <span className="text-transparent bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text [-webkit-background-clip:text]">
+                Leading Agents
+              </span>
+            </h2>
+            <p className="text-xl text-gray-400 max-w-3xl mx-auto">
+              Join thousands of real estate professionals who've transformed their business with AI
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-8">
+            {[
+              {
+                name: "Sarah Chen",
+                role: "Top 1% Agent, Century 21",
+                quote: "UltraReach's AI has doubled my showing appointments while cutting my work hours in half. It's like having a full-time assistant who never sleeps.",
+                image: "/testimonials/sarah.jpg"
+              },
+              {
+                name: "Michael Rodriguez",
+                role: "Team Lead, RE/MAX Elite",
+                quote: "The lead qualification is incredible. My team only speaks to serious buyers now, and our conversion rates have skyrocketed.",
+                image: "/testimonials/michael.jpg"
+              },
+              {
+                name: "Emily Thompson",
+                role: "Broker, Keller Williams",
+                quote: "Finally, a solution that actually understands real estate! The AI handles property inquiries better than most agents I've trained.",
+                image: "/testimonials/emily.jpg"
+              }
+            ].map((testimonial, index) => (
+              <Card key={index} className="bg-gray-900/50 border-gray-800 hover:border-gray-700 transition-all">
+                <CardContent className="p-6">
+                  <div className="flex items-start gap-4 mb-4">
+                    <div className="w-12 h-12 rounded-full overflow-hidden bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 p-[1px]">
+                      <div className="w-full h-full rounded-full overflow-hidden">
+                        <img src={testimonial.image} alt={testimonial.name} className="w-full h-full object-cover" />
+                      </div>
+                    </div>
+                    <div>
+                      <h3 className="font-bold">{testimonial.name}</h3>
+                      <p className="text-sm text-gray-400">{testimonial.role}</p>
+                    </div>
+                  </div>
+                  <p className="text-gray-300">"{testimonial.quote}"</p>
+                </CardContent>
+              </Card>
             ))}
           </div>
         </div>
-      </div>
+      </section>
+
+      {/* ROI Calculator Section */}
+      <section className="py-24 relative">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">
+              Calculate Your{' '}
+              <span className="text-transparent bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text [-webkit-background-clip:text]">
+                ROI
+              </span>
+            </h2>
+            <p className="text-xl text-gray-400 max-w-3xl mx-auto">
+              See how much time and money you could save with AI-powered calling
+            </p>
+          </div>
+
+          <Card className="bg-gray-900/50 border-gray-800">
+            <CardContent className="p-8">
+              <div className="grid md:grid-cols-2 gap-12">
+                <div>
+                  <h3 className="text-2xl font-bold mb-6">Monthly Impact</h3>
+                  <div className="space-y-6">
+                    <div>
+                      <div className="flex justify-between mb-2">
+                        <span className="text-gray-400">Calls Handled</span>
+                        <span className="font-bold text-transparent bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text [-webkit-background-clip:text]">500+</span>
+                      </div>
+                      <div className="h-2 bg-gray-800 rounded-full overflow-hidden">
+                        <div className="h-full w-full bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400"></div>
+                      </div>
+                    </div>
+                    <div>
+                      <div className="flex justify-between mb-2">
+                        <span className="text-gray-400">Hours Saved</span>
+                        <span className="font-bold text-transparent bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text [-webkit-background-clip:text]">120+</span>
+                      </div>
+                      <div className="h-2 bg-gray-800 rounded-full overflow-hidden">
+                        <div className="h-full w-4/5 bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400"></div>
+                      </div>
+                    </div>
+                    <div>
+                      <div className="flex justify-between mb-2">
+                        <span className="text-gray-400">Additional Showings</span>
+                        <span className="font-bold text-transparent bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text [-webkit-background-clip:text]">50+</span>
+                      </div>
+                      <div className="h-2 bg-gray-800 rounded-full overflow-hidden">
+                        <div className="h-full w-3/5 bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400"></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div className="flex flex-col justify-center">
+                  <div className="text-center">
+                    <div className="text-4xl font-bold mb-2">
+                      <span className="text-transparent bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text [-webkit-background-clip:text]">
+                        10x ROI
+                      </span>
+                    </div>
+                    <p className="text-gray-400 mb-8">Average return on investment</p>
+                    <button className="px-8 py-3 rounded-lg bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 text-white font-medium hover:opacity-90 transition-opacity">
+                      Calculate Your ROI
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+        </div>
+      </section>
 
       {/* CTA Section */}
-      <div className="relative py-24">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text text-transparent [-webkit-background-clip:text] mb-6">
-            Ready to Become Superhuman?
-          </h2>
-          <p className="text-xl text-gray-400 mb-10">
-            Join the elite agents who are already living in the future.
-          </p>
-          <button className="group relative px-12 py-6 bg-gradient-to-r from-blue-600 to-purple-600 rounded-full text-xl font-semibold overflow-hidden transition-all hover:scale-105">
-            Transform Your Business Now
-            <div className="absolute inset-0 bg-white opacity-0 group-hover:opacity-20 transition-opacity"></div>
-            <ChevronRight className="inline-block ml-2 w-6 h-6 group-hover:translate-x-1 transition-transform" />
-          </button>
+      <section className="py-24 relative">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="relative rounded-2xl overflow-hidden">
+            <div className="absolute inset-0 bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 opacity-10"></div>
+            <div className="relative p-12 text-center">
+              <h2 className="text-4xl md:text-5xl font-bold mb-6">
+                Ready to{' '}
+                <span className="text-transparent bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text [-webkit-background-clip:text]">
+                  Transform
+                </span>
+                {' '}Your Business?
+              </h2>
+              <p className="text-xl text-gray-400 max-w-2xl mx-auto mb-8">
+                Join the future of real estate. Start converting more leads into showings today.
+              </p>
+              <div className="flex flex-col sm:flex-row justify-center gap-4">
+                <button className="px-8 py-4 rounded-lg bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 text-white font-medium hover:opacity-90 transition-opacity">
+                  Start Free Trial
+                </button>
+                <button className="px-8 py-4 rounded-lg bg-gray-900 text-white font-medium hover:bg-gray-800 transition-colors">
+                  Schedule Demo
+                </button>
+              </div>
+            </div>
+          </div>
         </div>
-      </div>
+      </section>
 
-      {/* Floating CTA */}
-      <div className="fixed bottom-8 right-8 z-50">
-        <button className="group flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-blue-600 to-purple-600 rounded-full text-lg font-semibold shadow-lg hover:shadow-xl transition-all hover:scale-105">
-          <MessageSquare className="w-5 h-5" />
-          Talk to Our AI
-          <div className="absolute inset-0 bg-white opacity-0 group-hover:opacity-20 transition-opacity rounded-full"></div>
-        </button>
-      </div>
-
-      <style jsx global>{`
-        @keyframes gradient {
-          0% { background-position: 0% 50%; }
-          50% { background-position: 100% 50%; }
-          100% { background-position: 0% 50%; }
-        }
-        
-        @keyframes float {
-          0% { transform: translateY(0px) rotate(0deg); }
-          50% { transform: translateY(-20px) rotate(180deg); }
-          100% { transform: translateY(0px) rotate(360deg); }
-        }
-        
-        .animate-gradient {
-          background-size: 400% 400%;
-          animation: gradient 15s ease infinite;
-        }
-        
-        .animate-float {
-          animation: float 20s ease infinite;
-        }
-      `}</style>
+      {/* Video Modal */}
+      {isVideoModalOpen && (
+        <div className="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 flex items-center justify-center p-4">
+          {/* Video modal content */}
+        </div>
+      )}
     </div>
   );
-};
+}
 
 export default LandingPage;

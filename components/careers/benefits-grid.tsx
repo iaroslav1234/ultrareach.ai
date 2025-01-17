@@ -3,32 +3,32 @@ import { Card, CardContent } from "@/components/ui/card";
 
 const benefits = [
   {
-    icon: DollarSign,
+    icon: <DollarSign className="w-6 h-6 text-white" />,
     title: "Competitive Compensation",
     description: "Competitive salary with equity options and performance bonuses"
   },
   {
-    icon: Heart,
+    icon: <Heart className="w-6 h-6 text-white" />,
     title: "Health & Wellness",
     description: "Comprehensive health insurance and wellness program allowance"
   },
   {
-    icon: BookOpen,
+    icon: <BookOpen className="w-6 h-6 text-white" />,
     title: "Learning Budget",
     description: "$2,500 annual budget for professional development and courses"
   },
   {
-    icon: Clock,
+    icon: <Clock className="w-6 h-6 text-white" />,
     title: "Flexible Hours",
     description: "Work when you're most productive with flexible scheduling"
   },
   {
-    icon: Home,
+    icon: <Home className="w-6 h-6 text-white" />,
     title: "Home Office Setup",
     description: "$1,000 stipend to create your perfect home workspace"
   },
   {
-    icon: Plane,
+    icon: <Plane className="w-6 h-6 text-white" />,
     title: "Team Retreats",
     description: "Annual company retreats to amazing destinations"
   }
@@ -36,32 +36,28 @@ const benefits = [
 
 export function BenefitsGrid() {
   return (
-    <section className="relative py-24 bg-gray-900/50">
+    <section className="py-24 bg-gray-900/50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-12">
-          <h2 className="text-4xl font-bold bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent [-webkit-background-clip:text] mb-4">
-            Benefits & Perks
-          </h2>
-          <p className="text-xl text-gray-400 max-w-3xl mx-auto">
-            We take care of our team with comprehensive benefits and perks 
-            that support your growth, health, and work-life balance.
-          </p>
-        </div>
+        <h2 className="text-3xl md:text-4xl font-bold text-center mb-4">
+          Why Work{' '}
+          <span className="text-transparent bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text [-webkit-background-clip:text]">
+            With Us
+          </span>
+        </h2>
+        
+        <p className="text-xl text-gray-400 text-center max-w-3xl mx-auto mb-16">
+          We offer competitive benefits and a supportive environment that helps you thrive
+        </p>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {benefits.map((benefit, index) => (
-            <Card 
-              key={index}
-              className="bg-gray-900/50 border-gray-700 hover:border-gray-600 transition-all duration-300"
-            >
-              <CardContent className="p-6">
-                <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-blue-500/20 to-purple-500/20 flex items-center justify-center mb-4">
-                  <benefit.icon className="w-6 h-6 text-blue-400" />
-                </div>
-                <h3 className="text-lg font-bold mb-2">{benefit.title}</h3>
-                <p className="text-sm text-gray-400">{benefit.description}</p>
-              </CardContent>
-            </Card>
+            <div key={index} className="p-6 rounded-xl bg-gray-800/50 border border-gray-700">
+              <div className="w-12 h-12 rounded-lg bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 flex items-center justify-center mb-4">
+                {benefit.icon}
+              </div>
+              <h3 className="text-xl font-bold mb-2">{benefit.title}</h3>
+              <p className="text-gray-400">{benefit.description}</p>
+            </div>
           ))}
         </div>
       </div>

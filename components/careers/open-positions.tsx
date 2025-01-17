@@ -9,7 +9,7 @@ const positions = [
     title: "Senior ML Engineer",
     department: "AI/ML",
     location: "Remote",
-    icon: Brain,
+    icon: <Brain className="w-6 h-6 text-white" />,
     responsibilities: [
       "Design and implement ML models for voice processing",
       "Optimize model performance and scalability",
@@ -25,7 +25,7 @@ const positions = [
     title: "Full Stack Developer",
     department: "Engineering",
     location: "Remote",
-    icon: Code,
+    icon: <Code className="w-6 h-6 text-white" />,
     responsibilities: [
       "Build scalable web applications",
       "Implement real-time features",
@@ -41,7 +41,7 @@ const positions = [
     title: "AI Product Manager",
     department: "AI/ML",
     location: "Hybrid",
-    icon: Brain,
+    icon: <Brain className="w-6 h-6 text-white" />,
     responsibilities: [
       "Define AI product strategy",
       "Coordinate with ML teams",
@@ -57,7 +57,7 @@ const positions = [
     title: "Sales Engineer",
     department: "Sales",
     location: "Remote",
-    icon: LineChart,
+    icon: <LineChart className="w-6 h-6 text-white" />,
     responsibilities: [
       "Technical sales presentations",
       "Custom solution architecture",
@@ -73,7 +73,7 @@ const positions = [
     title: "Customer Success Manager",
     department: "Customer Success",
     location: "Remote",
-    icon: Headphones,
+    icon: <Headphones className="w-6 h-6 text-white" />,
     responsibilities: [
       "Manage key client relationships",
       "Drive product adoption",
@@ -100,7 +100,7 @@ export function OpenPositions() {
     <section className="relative py-24">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
-          <h2 className="text-4xl font-bold bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent [-webkit-background-clip:text] mb-4">
+          <h2 className="text-4xl font-bold text-transparent bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text [-webkit-background-clip:text] mb-4">
             Open Positions
           </h2>
           <p className="text-xl text-gray-400 max-w-3xl mx-auto mb-8">
@@ -115,7 +115,7 @@ export function OpenPositions() {
                 onClick={() => setSelectedDepartment(dept)}
                 className={`px-4 py-2 rounded-lg transition-all ${
                   selectedDepartment === dept
-                    ? 'bg-gradient-to-r from-blue-500 to-purple-500'
+                    ? 'bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400'
                     : 'bg-gray-800 hover:bg-gray-700'
                 }`}
               >
@@ -134,8 +134,8 @@ export function OpenPositions() {
               <CardContent className="p-6">
                 <div className="flex flex-col md:flex-row md:items-center justify-between gap-6">
                   <div className="flex items-start gap-4">
-                    <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-blue-500/20 to-purple-500/20 flex items-center justify-center">
-                      <position.icon className="w-6 h-6 text-blue-400" />
+                    <div className="w-12 h-12 rounded-xl bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 flex items-center justify-center">
+                      {position.icon}
                     </div>
                     <div>
                       <h3 className="text-xl font-bold mb-1">{position.title}</h3>
@@ -154,7 +154,7 @@ export function OpenPositions() {
                           </ul>
                         </div>
                         <div>
-                          <h4 className="font-semibold mb-2">Required Skills:</h4>
+                          <h4 className="font-semibold mb-2">Requirements:</h4>
                           <ul className="list-disc list-inside text-sm text-gray-400">
                             {position.skills.map((skill, i) => (
                               <li key={i}>{skill}</li>
@@ -164,7 +164,7 @@ export function OpenPositions() {
                       </div>
                     </div>
                   </div>
-                  <button className="px-6 py-3 rounded-lg bg-gradient-to-r from-blue-500 to-purple-500 font-semibold whitespace-nowrap hover:opacity-90 transition-opacity">
+                  <button className="px-6 py-3 rounded-lg bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 text-white font-medium hover:opacity-90 transition-opacity whitespace-nowrap">
                     Apply Now
                   </button>
                 </div>

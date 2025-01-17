@@ -1,3 +1,4 @@
+import { Fragment } from 'react';
 import { Check, Minus } from 'lucide-react';
 
 const features = [
@@ -8,19 +9,19 @@ const features = [
         name: 'Monthly minutes',
         starter: '1,000',
         professional: '10,000',
-        business: '50,000'
+        enterprise: '50,000'
       },
       {
         name: 'Voice personas',
         starter: '2',
         professional: '5',
-        business: 'Unlimited'
+        enterprise: 'Unlimited'
       },
       {
         name: 'Custom voice creation',
         starter: false,
         professional: true,
-        business: true
+        enterprise: true
       }
     ]
   },
@@ -31,19 +32,19 @@ const features = [
         name: 'Natural language understanding',
         starter: 'Basic',
         professional: 'Advanced',
-        business: 'Enterprise'
+        enterprise: 'Enterprise'
       },
       {
         name: 'Sentiment analysis',
         starter: false,
         professional: true,
-        business: true
+        enterprise: true
       },
       {
         name: 'Multi-language support',
         starter: '5 languages',
         professional: '20 languages',
-        business: 'All languages'
+        enterprise: 'All languages'
       }
     ]
   },
@@ -54,19 +55,19 @@ const features = [
         name: 'API access',
         starter: 'Basic',
         professional: 'Full',
-        business: 'Full'
+        enterprise: 'Full'
       },
       {
         name: 'Custom integrations',
         starter: false,
         professional: true,
-        business: true
+        enterprise: true
       },
       {
         name: 'Webhooks',
         starter: false,
         professional: true,
-        business: true
+        enterprise: true
       }
     ]
   },
@@ -77,19 +78,19 @@ const features = [
         name: 'Support',
         starter: 'Standard',
         professional: 'Priority',
-        business: '24/7 Dedicated'
+        enterprise: '24/7 Dedicated'
       },
       {
         name: 'SLA guarantee',
         starter: false,
         professional: false,
-        business: true
+        enterprise: true
       },
       {
         name: 'Custom deployment',
         starter: false,
         professional: false,
-        business: true
+        enterprise: true
       }
     ]
   }
@@ -110,62 +111,60 @@ export function FeatureComparison() {
                 <th className="py-4 px-6 text-left min-w-[200px]">Features</th>
                 <th className="py-4 px-6 text-center">Starter</th>
                 <th className="py-4 px-6 text-center">Professional</th>
-                <th className="py-4 px-6 text-center">Business</th>
+                <th className="py-4 px-6 text-center">Enterprise</th>
               </tr>
             </thead>
             <tbody>
               {features.map((feature) => (
-                <>
-                  <tr key={feature.category} className="bg-gray-900/30">
-                    <td 
-                      colSpan={4} 
-                      className="py-3 px-6 font-semibold"
-                    >
+                <Fragment key={feature.category}>
+                  <tr className="bg-gray-900/30">
+                    <td className="py-4 px-6 font-medium border-b border-gray-800" colSpan={4}>
                       {feature.category}
                     </td>
                   </tr>
                   {feature.items.map((item) => (
-                    <tr 
-                      key={item.name}
-                      className="border-b border-gray-800/50 hover:bg-gray-900/30 transition-colors"
-                    >
-                      <td className="py-4 px-6">{item.name}</td>
-                      <td className="py-4 px-6 text-center">
+                    <tr key={`${feature.category}-${item.name}`}>
+                      <td className="py-4 px-6 border-b border-gray-800">
+                        <div className="flex items-center gap-2">
+                          {item.name}
+                        </div>
+                      </td>
+                      <td className="py-4 px-6 text-center border-b border-gray-800">
                         {typeof item.starter === 'boolean' ? (
                           item.starter ? (
-                            <span>&#10004;</span>
+                            <Check className="w-5 h-5 text-green-400 mx-auto" />
                           ) : (
-                            <span>&#8210;</span>
+                            <Minus className="w-5 h-5 text-gray-400 mx-auto" />
                           )
                         ) : (
                           <span className="text-gray-300">{item.starter}</span>
                         )}
                       </td>
-                      <td className="py-4 px-6 text-center">
+                      <td className="py-4 px-6 text-center border-b border-gray-800">
                         {typeof item.professional === 'boolean' ? (
                           item.professional ? (
-                            <span>&#10004;</span>
+                            <Check className="w-5 h-5 text-green-400 mx-auto" />
                           ) : (
-                            <span>&#8210;</span>
+                            <Minus className="w-5 h-5 text-gray-400 mx-auto" />
                           )
                         ) : (
                           <span className="text-gray-300">{item.professional}</span>
                         )}
                       </td>
-                      <td className="py-4 px-6 text-center">
-                        {typeof item.business === 'boolean' ? (
-                          item.business ? (
-                            <span>&#10004;</span>
+                      <td className="py-4 px-6 text-center border-b border-gray-800">
+                        {typeof item.enterprise === 'boolean' ? (
+                          item.enterprise ? (
+                            <Check className="w-5 h-5 text-green-400 mx-auto" />
                           ) : (
-                            <span>&#8210;</span>
+                            <Minus className="w-5 h-5 text-gray-400 mx-auto" />
                           )
                         ) : (
-                          <span className="text-gray-300">{item.business}</span>
+                          <span className="text-gray-300">{item.enterprise}</span>
                         )}
                       </td>
                     </tr>
                   ))}
-                </>
+                </Fragment>
               ))}
             </tbody>
           </table>

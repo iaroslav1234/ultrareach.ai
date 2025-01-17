@@ -7,16 +7,11 @@ export function HeroSection() {
 
   return (
     <section className="relative pt-32 pb-16 overflow-hidden">
-      <div className="absolute inset-0 bg-gradient-to-b from-blue-500/10 to-purple-500/10" />
-      
-      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
           Simple, transparent{' '}
-          <span className="relative">
-            <span className="absolute inset-0 bg-gradient-to-r from-blue-400 to-purple-400 blur-lg opacity-50"></span>
-            <span className="relative bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
-              pricing
-            </span>
+          <span className="text-blue-400">
+            pricing
           </span>
         </h1>
         
@@ -29,7 +24,7 @@ export function HeroSection() {
           <button 
             className={`px-4 py-2 rounded-md font-medium transition-all ${
               billingType === 'monthly' 
-                ? 'bg-gradient-to-r from-blue-500 to-purple-500 text-white' 
+                ? 'bg-blue-600 text-white' 
                 : 'text-white hover:text-blue-400'
             }`}
             onClick={() => setBillingType('monthly')}
@@ -39,7 +34,7 @@ export function HeroSection() {
           <button 
             className={`px-4 py-2 rounded-md font-medium transition-all ${
               billingType === 'annual' 
-                ? 'bg-gradient-to-r from-blue-500 to-purple-500 text-white' 
+                ? 'bg-blue-600 text-white' 
                 : 'text-white hover:text-blue-400'
             }`}
             onClick={() => setBillingType('annual')}

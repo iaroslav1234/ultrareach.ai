@@ -22,9 +22,9 @@ export function Header() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-16">
             {/* Logo */}
-            <Link href="/" className="text-xl font-bold">
+            <Link href="/" className="text-xl font-bold flex items-center">
               <span className="text-white">Ultra</span>
-              <span className="bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">Reach.ai</span>
+              <span className="text-transparent bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text [-webkit-background-clip:text]">Reach.ai</span>
             </Link>
 
             {/* Desktop Navigation */}
@@ -39,10 +39,10 @@ export function Header() {
                 </Link>
               ))}
               <Link
-                href="/demo"
-                className="px-4 py-2 rounded-lg bg-gradient-to-r from-blue-500 to-purple-500 text-white hover:from-blue-600 hover:to-purple-600 transition-all"
+                href="/login"
+                className="px-4 py-2 rounded-lg bg-blue-600 text-white hover:bg-blue-700 transition-all"
               >
-                Get Started
+                Login
               </Link>
             </nav>
 
@@ -80,11 +80,11 @@ export function Header() {
               </Link>
             ))}
             <Link
-              href="/demo"
-              className="px-6 py-3 rounded-lg bg-gradient-to-r from-blue-500 to-purple-500 text-white text-xl hover:from-blue-600 hover:to-purple-600 transition-all mt-4"
+              href="/login"
+              className="px-6 py-3 rounded-lg bg-blue-600 text-white text-xl hover:bg-blue-700 transition-all mt-4"
               onClick={() => setIsMenuOpen(false)}
             >
-              Get Started
+              Login
             </Link>
           </nav>
         </div>

@@ -118,9 +118,9 @@ export default function About() {
 
       {/* Hero Section */}
       <section className="relative py-24">
-        <div className="absolute inset-0 bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 opacity-10 animate-gradient"></div>
+        <div className="absolute inset-0 bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 opacity-10 animate-gradient"></div>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
-          <h1 className="text-5xl md:text-7xl font-bold bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text text-transparent [-webkit-background-clip:text] text-center mb-8">
+          <h1 className="text-5xl md:text-7xl font-bold text-transparent bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text [-webkit-background-clip:text] text-center mb-8">
             Revolutionizing Real Estate<br />Communication Through AI
           </h1>
           <p className="text-xl text-gray-300 text-center max-w-3xl mx-auto mb-16">
@@ -129,19 +129,19 @@ export default function About() {
 
           {/* Timeline */}
           <div className="relative">
-            <div className="absolute left-1/2 transform -translate-x-1/2 h-full w-px bg-gradient-to-b from-blue-500 to-purple-500"></div>
+            <div className="absolute left-1/2 transform -translate-x-1/2 h-full w-px bg-gradient-to-b from-blue-400 via-purple-400 to-pink-400"></div>
             <div className="space-y-16">
               {milestones.map((milestone, index) => (
                 <div key={index} className={`flex items-center gap-8 ${index % 2 === 0 ? 'flex-row-reverse' : ''}`}>
                   <div className={`w-1/2 ${index % 2 === 0 ? 'text-right' : ''}`}>
                     <div className="text-sm text-gray-400">{milestone.year} {milestone.quarter}</div>
-                    <h3 className="text-xl font-bold bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent [-webkit-background-clip:text]">
+                    <h3 className="text-xl font-bold text-transparent bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text [-webkit-background-clip:text]">
                       {milestone.title}
                     </h3>
                     <p className="text-gray-300">{milestone.description}</p>
                   </div>
                   <div className="relative">
-                    <div className="w-4 h-4 rounded-full bg-gradient-to-r from-blue-500 to-purple-500"></div>
+                    <div className="w-4 h-4 rounded-full bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400"></div>
                   </div>
                   <div className="w-1/2"></div>
                 </div>
@@ -154,15 +154,15 @@ export default function About() {
       {/* Core Values */}
       <section className="py-24 bg-gray-900/50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl md:text-4xl font-bold text-center bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent [-webkit-background-clip:text] mb-16">
+          <h2 className="text-3xl md:text-4xl font-bold text-center text-transparent bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text [-webkit-background-clip:text] mb-16">
             Our Core Values
           </h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             {values.map((value, index) => (
               <Card key={index} className="bg-gray-800/50 border-gray-700 group hover:border-blue-500/50 transition-colors">
                 <CardContent className="p-6">
-                  <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-blue-500/20 to-purple-500/20 flex items-center justify-center mb-6 group-hover:from-blue-500/30 group-hover:to-purple-500/30 transition-colors">
-                    {value.icon}
+                  <div className="w-16 h-16 rounded-2xl bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 flex items-center justify-center mb-6 group-hover:opacity-90 transition-opacity">
+                    <div className="text-white">{value.icon}</div>
                   </div>
                   <h3 className="text-xl font-bold mb-3">{value.title}</h3>
                   <p className="text-gray-300 mb-4">{value.description}</p>
@@ -179,7 +179,7 @@ export default function About() {
       {/* Technology Overview */}
       <section className="py-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl md:text-4xl font-bold text-center bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent [-webkit-background-clip:text] mb-16">
+          <h2 className="text-3xl md:text-4xl font-bold text-center text-transparent bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text [-webkit-background-clip:text] mb-16">
             Our Technology
           </h2>
           <div className="grid md:grid-cols-2 gap-16">
@@ -188,82 +188,42 @@ export default function About() {
                 <h3 className="text-2xl font-bold mb-4">AI Capabilities</h3>
                 <ul className="space-y-4">
                   <li className="flex items-start gap-3">
-                    <div className="w-6 h-6 rounded-full bg-gradient-to-r from-blue-500 to-purple-500 flex items-center justify-center flex-shrink-0">
-                      <Zap className="w-4 h-4" />
+                    <div className="w-6 h-6 rounded-full bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 flex items-center justify-center flex-shrink-0">
+                      <Zap className="w-4 h-4 text-white" />
                     </div>
                     <div>
                       <strong className="block mb-1">Natural Language Processing</strong>
                       <p className="text-gray-300">Advanced understanding of real estate terminology and client intent</p>
                     </div>
                   </li>
-                  {/* Add more capabilities */}
+                  <li className="flex items-start gap-3">
+                    <div className="w-6 h-6 rounded-full bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 flex items-center justify-center flex-shrink-0">
+                      <LineChart className="w-4 h-4 text-white" />
+                    </div>
+                    <div>
+                      <strong className="block mb-1">Predictive Analytics</strong>
+                      <p className="text-gray-300">Data-driven insights for better decision making</p>
+                    </div>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <div className="w-6 h-6 rounded-full bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 flex items-center justify-center flex-shrink-0">
+                      <Shield className="w-4 h-4 text-white" />
+                    </div>
+                    <div>
+                      <strong className="block mb-1">Security & Privacy</strong>
+                      <p className="text-gray-300">Enterprise-grade security with end-to-end encryption</p>
+                    </div>
+                  </li>
                 </ul>
-              </div>
-              <div>
-                <h3 className="text-2xl font-bold mb-4">Architecture</h3>
-                <div className="rounded-xl bg-gray-800/50 border border-gray-700 p-6">
-                  {/* Add architecture visualization */}
-                </div>
               </div>
             </div>
             <div>
-              <h3 className="text-2xl font-bold mb-4">Development Timeline</h3>
-              <div className="space-y-6">
-                {/* Add development timeline */}
-              </div>
+              <img 
+                src="/tech-overview.png" 
+                alt="Technology Overview" 
+                className="rounded-xl border border-gray-800"
+              />
             </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Team Section */}
-      <section className="py-24 bg-gray-900/50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl md:text-4xl font-bold text-center bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent [-webkit-background-clip:text] mb-16">
-            Meet Our Team
-          </h2>
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {team.map((member, index) => (
-              <Card key={index} className="bg-gray-800/50 border-gray-700">
-                <CardContent className="p-6">
-                  <div className="w-24 h-24 rounded-full bg-gradient-to-r from-blue-500 to-purple-500 mx-auto mb-6"></div>
-                  <h3 className="text-xl font-bold text-center mb-1">{member.name}</h3>
-                  <p className="text-gray-400 text-center mb-4">{member.role}</p>
-                  <p className="text-gray-300 text-sm mb-4">{member.bio}</p>
-                  <div className="mb-4">
-                    <div className="text-sm font-bold mb-2">Expertise:</div>
-                    <div className="flex flex-wrap gap-2">
-                      {member.expertise.map((skill, i) => (
-                        <span key={i} className="px-2 py-1 rounded-full bg-gradient-to-r from-blue-600/20 to-purple-600/20 border border-blue-500/20 text-xs">
-                          {skill}
-                        </span>
-                      ))}
-                    </div>
-                  </div>
-                  <div className="flex justify-center gap-4">
-                    <a href={member.linkedin} target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-blue-400">
-                      <Linkedin className="w-5 h-5" />
-                    </a>
-                  </div>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Investors & Partners */}
-      <section className="py-24">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl md:text-4xl font-bold text-center bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent [-webkit-background-clip:text] mb-16">
-            Our Partners
-          </h2>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-            {partners.map((partner, index) => (
-              <div key={index} className="flex items-center justify-center">
-                <div className="w-32 h-16 bg-gray-800 rounded-lg opacity-50 hover:opacity-75 transition-opacity"></div>
-              </div>
-            ))}
           </div>
         </div>
       </section>
@@ -271,65 +231,43 @@ export default function About() {
       {/* Impact Metrics */}
       <section className="py-24 bg-gray-900/50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl md:text-4xl font-bold text-center bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent [-webkit-background-clip:text] mb-16">
+          <h2 className="text-3xl md:text-4xl font-bold text-center text-transparent bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text [-webkit-background-clip:text] mb-16">
             Our Impact
           </h2>
-          <div className="grid md:grid-cols-4 gap-8">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             {impactMetrics.map((metric, index) => (
-              <div key={index} className="p-6 rounded-2xl bg-gradient-to-br from-gray-800 to-gray-900 border border-gray-700">
-                <div className="text-3xl font-bold bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent [-webkit-background-clip:text]">
+              <div key={index} className="text-center">
+                <div className="text-4xl font-bold text-transparent bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text [-webkit-background-clip:text] mb-2">
                   {metric.value}
                 </div>
-                <div className="mt-2 text-gray-400">{metric.label}</div>
+                <div className="text-gray-400">{metric.label}</div>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Join Our Journey */}
-      <section className="relative py-24">
-        <div className="absolute inset-0 bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 opacity-10"></div>
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative">
-          <h2 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text text-transparent [-webkit-background-clip:text] mb-8">
-            Join Our Journey
+      {/* Contact */}
+      <section className="py-24">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <h2 className="text-3xl md:text-4xl font-bold text-transparent bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text [-webkit-background-clip:text] mb-8">
+            Get in Touch
           </h2>
-          <p className="text-xl text-gray-300 mb-12">
-            Be part of the future of real estate technology
+          <p className="text-xl text-gray-300 max-w-3xl mx-auto mb-12">
+            Want to learn more about how we're transforming real estate communication? Let's connect!
           </p>
-          <div className="grid md:grid-cols-2 gap-6 max-w-2xl mx-auto">
-            <a href="#" className="px-6 py-4 rounded-xl bg-gradient-to-r from-blue-500 to-purple-500 font-bold text-lg hover:opacity-90 transition-opacity">
-              View Open Positions
+          <div className="flex justify-center gap-4">
+            <a href="#" className="px-6 py-3 rounded-lg bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 text-white font-medium hover:opacity-90 transition-opacity flex items-center gap-2">
+              <Mail className="w-5 h-5" />
+              Contact Us
             </a>
-            <a href="#" className="px-6 py-4 rounded-xl bg-gray-800 font-bold text-lg hover:bg-gray-700 transition-colors">
-              Partner With Us
+            <a href="#" className="px-6 py-3 rounded-lg bg-gray-800 text-white font-medium hover:bg-gray-700 transition-colors flex items-center gap-2">
+              <Linkedin className="w-5 h-5" />
+              Follow Us
             </a>
           </div>
         </div>
       </section>
-
-      {/* Newsletter Signup */}
-      <section className="py-24 bg-gray-900/50">
-        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h3 className="text-2xl font-bold mb-6">Stay Updated</h3>
-          <p className="text-gray-300 mb-8">
-            Get the latest updates on our technology and company news
-          </p>
-          <form className="flex gap-4 max-w-md mx-auto">
-            <input
-              type="email"
-              placeholder="Enter your email"
-              className="flex-1 px-4 py-3 rounded-lg bg-gray-800 border border-gray-700 focus:outline-none focus:border-blue-500"
-            />
-            <button
-              type="submit"
-              className="px-6 py-3 rounded-lg bg-gradient-to-r from-blue-500 to-purple-500 font-bold hover:opacity-90 transition-opacity"
-            >
-              Subscribe
-            </button>
-          </form>
-        </div>
-      </section>
     </main>
-  )
+  );
 }
