@@ -30,69 +30,71 @@ const floatingElements = [
   { left: "48%", top: "62%", width: "96px", height: "96px", delay: "1.9s", duration: "14s" }
 ];
 
+const features = [
+  {
+    icon: <Phone className="w-8 h-8" />,
+    title: "24/7 Lead Response",
+    description: "Never miss a lead again. Our AI answers every call instantly, day or night, qualifying prospects and scheduling showings while you sleep.",
+    highlight: "100% response rate"
+  },
+  {
+    icon: <Brain className="w-8 h-8" />,
+    title: "Smart Lead Qualification",
+    description: "Our AI understands buyer preferences, budget, and timeline, intelligently qualifying leads and only sending you the most promising opportunities.",
+    highlight: "85% qualification accuracy"
+  },
+  {
+    icon: <Zap className="w-8 h-8" />,
+    title: "Instant Appointment Setting",
+    description: "While competitors play phone tag, your AI assistant checks your calendar and schedules showings instantly, maximizing every opportunity.",
+    highlight: "3x more showings booked"
+  },
+  {
+    icon: <Clock className="w-8 h-8" />,
+    title: "Time-Saving Automation",
+    description: "Focus on closing deals while your AI handles routine calls, follow-ups, and scheduling. It's like having a full-time assistant working 24/7.",
+    highlight: "30 hours saved per week"
+  }
+];
+
+const useCases = {
+  solo: {
+    title: "Solo Agents",
+    description: "Supercharge your productivity with an AI assistant that handles calls 24/7, qualifies leads, and schedules showings while you focus on closing deals.",
+    features: [
+      "Instant response to every inquiry",
+      "Smart lead qualification",
+      "Automated showing scheduling",
+      "24/7 property information"
+    ]
+  },
+  teams: {
+    title: "Real Estate Teams",
+    description: "Scale your team's efficiency with AI that distributes leads, coordinates showings, and ensures no opportunity falls through the cracks.",
+    features: [
+      "Intelligent lead routing",
+      "Team calendar coordination",
+      "Cross-listing promotion",
+      "Performance tracking"
+    ]
+  },
+  brokerages: {
+    title: "Large Brokerages",
+    description: "Transform your entire operation with AI calling that supports all your agents, ensuring consistent lead handling and maximum conversion.",
+    features: [
+      "Multi-agent support",
+      "Centralized lead management",
+      "Brand-consistent communication",
+      "Advanced analytics"
+    ]
+  }
+} as const;
+
+type UseCaseKey = keyof typeof useCases;
+
 const LandingPage = () => {
   const [isVideoModalOpen, setIsVideoModalOpen] = useState(false);
-  const [activeTab, setActiveTab] = useState('solo');
-
-  const features = [
-    {
-      icon: <Phone className="w-8 h-8" />,
-      title: "24/7 Lead Response",
-      description: "Never miss a lead again. Our AI answers every call instantly, day or night, qualifying prospects and scheduling showings while you sleep.",
-      highlight: "100% response rate"
-    },
-    {
-      icon: <Brain className="w-8 h-8" />,
-      title: "Smart Lead Qualification",
-      description: "Our AI understands buyer preferences, budget, and timeline, intelligently qualifying leads and only sending you the most promising opportunities.",
-      highlight: "85% qualification accuracy"
-    },
-    {
-      icon: <Zap className="w-8 h-8" />,
-      title: "Instant Appointment Setting",
-      description: "While competitors play phone tag, your AI assistant checks your calendar and schedules showings instantly, maximizing every opportunity.",
-      highlight: "3x more showings booked"
-    },
-    {
-      icon: <Clock className="w-8 h-8" />,
-      title: "Time-Saving Automation",
-      description: "Focus on closing deals while your AI handles routine calls, follow-ups, and scheduling. It's like having a full-time assistant working 24/7.",
-      highlight: "30 hours saved per week"
-    }
-  ];
-
-  const useCases = {
-    solo: {
-      title: "Solo Agents",
-      description: "Supercharge your productivity with an AI assistant that handles calls 24/7, qualifies leads, and schedules showings while you focus on closing deals.",
-      features: [
-        "Instant response to every inquiry",
-        "Smart lead qualification",
-        "Automated showing scheduling",
-        "24/7 property information"
-      ]
-    },
-    teams: {
-      title: "Real Estate Teams",
-      description: "Scale your team's efficiency with AI that distributes leads, coordinates showings, and ensures no opportunity falls through the cracks.",
-      features: [
-        "Intelligent lead routing",
-        "Team calendar coordination",
-        "Cross-listing promotion",
-        "Performance tracking"
-      ]
-    },
-    brokerages: {
-      title: "Large Brokerages",
-      description: "Transform your entire operation with AI calling that supports all your agents, ensuring consistent lead handling and maximum conversion.",
-      features: [
-        "Multi-agent support",
-        "Centralized lead management",
-        "Brand-consistent communication",
-        "Advanced analytics"
-      ]
-    }
-  };
+  const [activeTab, setActiveTab] = useState<UseCaseKey>('solo');
 
   return (
     <div className="min-h-screen bg-black text-white">
@@ -227,14 +229,14 @@ const LandingPage = () => {
           </div>
 
           <div className="flex justify-center gap-4 mb-12">
-            {Object.keys(useCases).map((key) => (
+            {(Object.keys(useCases) as UseCaseKey[]).map((key) => (
               <button
                 key={key}
                 onClick={() => setActiveTab(key)}
-                className={`px-6 py-3 rounded-lg transition-all ${
+                className={`px-6 py-3 rounded-lg font-medium transition-colors ${
                   activeTab === key
                     ? 'bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 text-white'
-                    : 'bg-gray-900 text-gray-400 hover:bg-gray-800'
+                    : 'text-gray-400 hover:text-white'
                 }`}
               >
                 {useCases[key].title}
