@@ -3,6 +3,7 @@
 import React, { useState, useEffect } from 'react';
 import { Phone, Calendar, MessageSquare, Clock, CheckCircle, ChevronRight, Sparkles, Bot, Brain, Zap } from 'lucide-react';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { Header } from "@/components/header";
 
 // Pre-defined positions for floating elements
 const floatingElements = [
@@ -66,15 +67,7 @@ const LandingPage = () => {
 
   return (
     <div className="min-h-screen bg-black text-white">
-      {/* Header */}
-      <header className="w-full bg-gray-900/95 backdrop-blur supports-[backdrop-filter]:bg-gray-900/75 border-b border-gray-800">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
-          <div className="text-xl font-bold">
-            UltraReach<span className="bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent [-webkit-background-clip:text]">.ai</span>
-          </div>
-        </div>
-      </header>
-
+      <Header />
       {/* Hero Section */}
       <div className="relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 opacity-10 animate-gradient"></div>
