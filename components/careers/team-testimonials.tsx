@@ -1,6 +1,6 @@
 import React from 'react';
 import Image from 'next/image';
-import { ChevronLeft, ChevronRight, Clock } from 'lucide-react';
+import { Clock } from 'lucide-react';
 
 const testimonials = [
   {

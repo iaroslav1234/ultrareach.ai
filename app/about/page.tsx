@@ -2,7 +2,7 @@ import React from 'react';
 import Image from 'next/image';
 import { Card, CardContent } from "@/components/ui/card"
 import { Header } from "@/components/header"
-import { Brain, Zap, Users, Shield, LineChart, Linkedin, Mail, ArrowRight, ChevronRight } from "lucide-react"
+import { Brain, Zap, Users, Shield, LineChart, Linkedin, Mail } from "lucide-react"
 
 const milestones = [
   {
