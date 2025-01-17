@@ -1,4 +1,5 @@
 import React from 'react';
+import Image from 'next/image';
 import { Card, CardContent } from "@/components/ui/card"
 import { Header } from "@/components/header"
 import { Brain, Zap, Users, Shield, LineChart, Linkedin, Mail, ArrowRight, ChevronRight } from "lucide-react"
@@ -219,9 +220,11 @@ export default function About() {
               </div>
             </div>
             <div>
-              <img 
+              <Image 
                 src="/tech-overview.png" 
                 alt="Technology Overview" 
+                width={400}
+                height={400}
                 className="rounded-xl border border-gray-800"
               />
             </div>
@@ -258,12 +261,12 @@ export default function About() {
             {team.map((member, index) => (
               <div key={index} className="text-center">
                 <div className="flex items-center gap-4 mb-4">
-                  <img 
-                    src={member.photo} 
-                    alt={member.name} 
+                  <Image
+                    src={member.photo}
+                    alt={member.name}
                     width={200}
                     height={200}
-                    className="rounded-lg"
+                    className="rounded-lg object-cover"
                   />
                 </div>
                 <h3 className="text-xl font-bold mb-2">{member.name}</h3>
@@ -297,10 +300,12 @@ export default function About() {
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             {partners.map((partner, index) => (
               <div key={index} className="text-center">
-                <img 
-                  src={partner.logo} 
-                  alt={partner.name} 
-                  className="rounded-lg"
+                <Image
+                  src={partner.logo}
+                  alt={partner.name}
+                  width={150}
+                  height={150}
+                  className="rounded-lg mx-auto"
                 />
                 <div className="text-gray-400">{partner.name}</div>
               </div>

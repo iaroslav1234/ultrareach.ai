@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useState } from 'react';
+import Image from 'next/image';
 import { Phone, Clock, CheckCircle, ChevronRight, Sparkles, Brain, Zap, Play } from 'lucide-react';
 import { Card, CardContent } from "@/components/ui/card";
 import { Header } from "@/components/header";
@@ -309,7 +310,13 @@ const LandingPage = () => {
                   <div className="flex items-start gap-4 mb-4">
                     <div className="w-12 h-12 rounded-full overflow-hidden bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 p-[1px]">
                       <div className="w-full h-full rounded-full overflow-hidden">
-                        <img src={testimonial.image} alt={testimonial.name} className="w-full h-full object-cover" />
+                        <Image
+                          src={testimonial.image}
+                          alt={testimonial.name}
+                          width={48}
+                          height={48}
+                          className="rounded-full"
+                        />
                       </div>
                     </div>
                     <div>
