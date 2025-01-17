@@ -9,9 +9,8 @@ export function HeroSection() {
           </span>
         </h1>
         
-        <p className="text-xl text-white/80 max-w-2xl mx-auto mb-6">
-          Help us shape the future of AI communication. We're looking for passionate
-          individuals to join our growing team.
+        <p className="text-gray-400">
+          We&apos;re looking for passionate individuals to join our mission
         </p>
 
         <div className="flex justify-center gap-4">

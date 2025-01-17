@@ -58,8 +58,7 @@ export function Enterprise() {
             Let's Build Something Great Together
           </h3>
           <p className="text-gray-400 mb-6">
-            Contact our sales team to learn how UltraReach can help transform your business
-            with enterprise-grade voice AI solutions.
+            We&apos;ll create a custom plan that&apos;s perfect for your business
           </p>
           <button className="px-8 py-3 rounded-lg bg-gradient-to-r from-blue-500 to-purple-500 font-medium hover:opacity-90 transition-opacity">
             Contact Enterprise Sales

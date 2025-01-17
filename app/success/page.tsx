@@ -165,7 +165,7 @@ export default function Success() {
                       </div>
                     ))}
                   </div>
-                  <blockquote className="text-gray-300 mb-6">"{study.quote}"</blockquote>
+                  <blockquote className="text-gray-300 mb-6">&quot;{study.quote}&quot;</blockquote>
                   <div className="mb-6">
                     <h4 className="font-bold mb-2">Features Used:</h4>
                     <div className="flex flex-wrap gap-2">
@@ -225,7 +225,7 @@ export default function Success() {
                 <div className="mt-4">
                   <h3 className="font-bold">{video.name}</h3>
                   <p className="text-gray-400 text-sm">{video.location}</p>
-                  <p className="text-gray-300 mt-2">"{video.quote}"</p>
+                  <p className="text-gray-300 mt-2">&quot;{video.quote}&quot;</p>
                 </div>
               </div>
             ))}
@@ -286,7 +286,7 @@ export default function Success() {
                       <Star key={i} className="w-5 h-5 fill-yellow-400 text-yellow-400" />
                     ))}
                   </div>
-                  <blockquote className="text-gray-300">"{testimonial.quote}"</blockquote>
+                  <blockquote className="text-gray-300">&quot;{testimonial.quote}&quot;</blockquote>
                 </CardContent>
               </Card>
             ))}

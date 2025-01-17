@@ -1,6 +1,7 @@
+import React from 'react';
 import { Card, CardContent } from "@/components/ui/card"
 import { Header } from "@/components/header"
-import { Brain, Zap, Users, Shield, LineChart, Linkedin, Mail, ArrowRight } from "lucide-react"
+import { Brain, Zap, Users, Shield, LineChart, Linkedin, Mail, ArrowRight, ChevronRight } from "lucide-react"
 
 const milestones = [
   {
@@ -123,8 +124,8 @@ export default function About() {
           <h1 className="text-5xl md:text-7xl font-bold text-transparent bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text [-webkit-background-clip:text] text-center mb-8">
             Revolutionizing Real Estate<br />Communication Through AI
           </h1>
-          <p className="text-xl text-gray-300 text-center max-w-3xl mx-auto mb-16">
-            We're on a mission to empower real estate professionals with AI technology that transforms how they connect with clients and close deals.
+          <p className="text-lg text-gray-400">
+            We&apos;re on a mission to revolutionize the real estate industry
           </p>
 
           {/* Timeline */}
@@ -244,6 +245,70 @@ export default function About() {
               </div>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* Team */}
+      <section className="py-24">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="text-3xl md:text-4xl font-bold text-center text-transparent bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text [-webkit-background-clip:text] mb-16">
+            Our Team
+          </h2>
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {team.map((member, index) => (
+              <div key={index} className="text-center">
+                <div className="flex items-center gap-4 mb-4">
+                  <img 
+                    src={member.photo} 
+                    alt={member.name} 
+                    width={200}
+                    height={200}
+                    className="rounded-lg"
+                  />
+                </div>
+                <h3 className="text-xl font-bold mb-2">{member.name}</h3>
+                <div className="text-gray-400">{member.role}</div>
+                <p className="text-gray-400">
+                  {member.bio}
+                </p>
+                <div className="text-sm text-gray-400">
+                  <strong>Expertise:</strong> {member.expertise.join(', ')}
+                </div>
+                <a 
+                  href={member.linkedin} 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="text-blue-500 hover:text-blue-700 transition-colors"
+                >
+                  LinkedIn
+                </a>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Partners */}
+      <section className="py-24 bg-gray-900/50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="text-3xl md:text-4xl font-bold text-center text-transparent bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text [-webkit-background-clip:text] mb-16">
+            Our Partners
+          </h2>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+            {partners.map((partner, index) => (
+              <div key={index} className="text-center">
+                <img 
+                  src={partner.logo} 
+                  alt={partner.name} 
+                  className="rounded-lg"
+                />
+                <div className="text-gray-400">{partner.name}</div>
+              </div>
+            ))}
+          </div>
+          <p className="text-gray-400">
+            We&apos;re proud to work with some of the industry&apos;s most innovative companies
+          </p>
         </div>
       </section>
 

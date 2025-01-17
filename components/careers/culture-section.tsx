@@ -1,3 +1,4 @@
+import React from 'react';
 import { Globe, Users, Zap, Heart } from 'lucide-react';
 import { Card, CardContent } from "@/components/ui/card";
 
@@ -38,6 +39,12 @@ export function CultureSection() {
             At UltraReach, we're building more than just technology. 
             We're creating a workplace where innovation thrives and every voice matters.
           </p>
+        <p className="text-gray-400">
+          We&apos;re building a culture of innovation, collaboration, and growth
+        </p>
+        <p className="text-gray-400">
+          It&apos;s not just about what we build, but how we build it
+        </p>
         <div className="grid md:grid-cols-3 gap-8">
           {values.map((value, index) => (
             <div key={index} className="p-6 rounded-xl bg-gray-900/50 border border-gray-800">

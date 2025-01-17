@@ -1,4 +1,4 @@
-import { FileText, Phone, Users, CheckCircle, Check } from 'lucide-react';
+import { FileText, Phone, Users, CheckCircle, ArrowRight } from 'lucide-react';
 
 const steps = [
   {
