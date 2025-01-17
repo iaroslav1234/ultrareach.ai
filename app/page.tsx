@@ -124,7 +124,7 @@ const LandingPage = () => {
             </p>
             <div className="mt-8 md:mt-10 flex flex-col sm:flex-row justify-center gap-4">
               <button className="group relative px-6 sm:px-8 py-3 sm:py-4 bg-blue-600 rounded-full text-base sm:text-lg font-semibold overflow-hidden transition-all hover:bg-blue-700 w-full sm:w-auto">
-                Start Free Trial
+                Schedule Demo
                 <div className="absolute inset-0 bg-white opacity-0 group-hover:opacity-20 transition-opacity"></div>
                 <ChevronRight className="inline-block ml-2 w-4 h-4 sm:w-5 sm:h-5 group-hover:translate-x-1 transition-transform" />
               </button>
@@ -419,10 +419,10 @@ const LandingPage = () => {
               </p>
               <div className="flex flex-col sm:flex-row justify-center gap-4">
                 <button className="px-8 py-4 rounded-lg bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 text-white font-medium hover:opacity-90 transition-opacity">
-                  Start Free Trial
+                  Get Started Now
                 </button>
                 <button className="px-8 py-4 rounded-lg bg-gray-900 text-white font-medium hover:bg-gray-800 transition-colors">
-                  Schedule Demo
+                  Contact Sales
                 </button>
               </div>
             </div>

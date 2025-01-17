@@ -3,94 +3,120 @@ import { Check, Minus } from 'lucide-react';
 
 const features = [
   {
-    category: 'Voice Processing',
-    items: [
+    name: 'AI Calling Features',
+    features: [
       {
-        name: 'Monthly minutes',
-        starter: '1,000',
-        professional: '10,000',
-        enterprise: '50,000'
+        name: 'AI-Driven Cold Calling',
+        basic: true,
+        standard: true,
+        premium: true,
+        description: 'Proprietary AI calls your leads and qualifies them'
       },
       {
-        name: 'Voice personas',
-        starter: '2',
-        professional: '5',
-        enterprise: 'Unlimited'
+        name: 'Call Minutes',
+        basic: 'Pay as you go',
+        standard: '500 included',
+        premium: '1,000 included',
+        description: 'Monthly allocation of AI calling minutes'
       },
       {
-        name: 'Custom voice creation',
-        starter: false,
-        professional: true,
-        enterprise: true
+        name: 'Additional Minutes Rate',
+        basic: '$0.20/min',
+        standard: '$0.20/min',
+        premium: '$0.20/min',
+        description: 'Rate for minutes beyond monthly allocation'
+      },
+      {
+        name: 'Advanced Follow-Ups',
+        basic: false,
+        standard: false,
+        premium: true,
+        description: 'AI manages follow-up calls, texts, and reminders'
       }
     ]
   },
   {
-    category: 'AI Features',
-    items: [
+    name: 'CRM & Integration',
+    features: [
       {
-        name: 'Natural language understanding',
-        starter: 'Basic',
-        professional: 'Advanced',
-        enterprise: 'Enterprise'
+        name: 'Basic CRM Integration',
+        basic: true,
+        standard: true,
+        premium: true,
+        description: 'Syncs interested leads with your CRM'
       },
       {
-        name: 'Sentiment analysis',
-        starter: false,
-        professional: true,
-        enterprise: true
+        name: 'CRM Setup & Customization',
+        basic: false,
+        standard: true,
+        premium: true,
+        description: 'Tailored CRM setup to match your workflow'
       },
       {
-        name: 'Multi-language support',
-        starter: '5 languages',
-        professional: '20 languages',
-        enterprise: 'All languages'
+        name: 'Priority CRM Customization',
+        basic: false,
+        standard: false,
+        premium: true,
+        description: 'Advanced workflows and integrations'
+      },
+      {
+        name: 'Appointment Booking',
+        basic: false,
+        standard: true,
+        premium: true,
+        description: 'AI schedules qualified appointments into your calendar'
       }
     ]
   },
   {
-    category: 'Integration & API',
-    items: [
+    name: 'Reporting & Analytics',
+    features: [
       {
-        name: 'API access',
-        starter: 'Basic',
-        professional: 'Full',
-        enterprise: 'Full'
+        name: 'Basic Reporting',
+        basic: true,
+        standard: true,
+        premium: true,
+        description: 'Summary of call performance and outcomes'
       },
       {
-        name: 'Custom integrations',
-        starter: false,
-        professional: true,
-        enterprise: true
+        name: 'Weekly Performance Reports',
+        basic: false,
+        standard: true,
+        premium: true,
+        description: 'Detailed insights into call outcomes and booked appointments'
       },
       {
-        name: 'Webhooks',
-        starter: false,
-        professional: true,
-        enterprise: true
+        name: 'Advanced Analytics',
+        basic: false,
+        standard: false,
+        premium: true,
+        description: 'Granular insights into lead behavior and ROI'
       }
     ]
   },
   {
-    category: 'Support & Security',
-    items: [
+    name: 'Support',
+    features: [
       {
-        name: 'Support',
-        starter: 'Standard',
-        professional: 'Priority',
-        enterprise: '24/7 Dedicated'
+        name: 'Standard Support',
+        basic: true,
+        standard: true,
+        premium: true,
+        description: 'Email and chat support'
       },
       {
-        name: 'SLA guarantee',
-        starter: false,
-        professional: false,
-        enterprise: true
+        name: 'Priority Support',
+        basic: false,
+        standard: true,
+        premium: true,
+        description: 'Faster response times and priority queue'
       },
       {
-        name: 'Custom deployment',
-        starter: false,
-        professional: false,
-        enterprise: true
+        name: 'Dedicated Account Manager',
+        basic: false,
+        standard: false,
+        premium: true,
+        description: 'On-demand support for performance optimization'
       }
     ]
   }
@@ -98,78 +124,80 @@ const features = [
 
 export function FeatureComparison() {
   return (
-    <section className="py-24 bg-gray-900/50">
+    <div className="py-24 bg-gray-900/50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 className="text-3xl font-bold text-center mb-12">
-          Compare Features
-        </h2>
+        <div className="text-center mb-16">
+          <h2 className="text-3xl font-bold mb-4">Compare Features</h2>
+          <p className="text-xl text-gray-400">Detailed comparison of all features across plans</p>
+        </div>
 
-        <div className="overflow-x-auto">
-          <table className="w-full">
-            <thead>
-              <tr className="border-b border-gray-800">
-                <th className="py-4 px-6 text-left min-w-[200px]">Features</th>
-                <th className="py-4 px-6 text-center">Starter</th>
-                <th className="py-4 px-6 text-center">Professional</th>
-                <th className="py-4 px-6 text-center">Enterprise</th>
-              </tr>
-            </thead>
-            <tbody>
-              {features.map((feature) => (
-                <Fragment key={feature.category}>
-                  <tr className="bg-gray-900/30">
-                    <td className="py-4 px-6 font-medium border-b border-gray-800" colSpan={4}>
-                      {feature.category}
-                    </td>
+        <div className="mt-12 space-y-16">
+          {features.map((section) => (
+            <div key={section.name} className="border border-gray-800 rounded-xl overflow-hidden">
+              <div className="bg-gray-900 px-6 py-4">
+                <h3 className="text-lg font-semibold">{section.name}</h3>
+              </div>
+              <table className="w-full">
+                <thead>
+                  <tr className="border-b border-gray-800">
+                    <th className="py-4 px-6 text-left">Feature</th>
+                    <th className="py-4 px-6 text-center">Basic</th>
+                    <th className="py-4 px-6 text-center">Standard</th>
+                    <th className="py-4 px-6 text-center">Premium</th>
                   </tr>
-                  {feature.items.map((item) => (
-                    <tr key={`${feature.category}-${item.name}`}>
-                      <td className="py-4 px-6 border-b border-gray-800">
-                        <div className="flex items-center gap-2">
-                          {item.name}
+                </thead>
+                <tbody className="divide-y divide-gray-800">
+                  {section.features.map((feature) => (
+                    <tr key={feature.name} className="hover:bg-gray-900/50 group">
+                      <td className="py-4 px-6">
+                        <div>
+                          <div className="font-medium">{feature.name}</div>
+                          <div className="text-sm text-gray-400 group-hover:text-gray-300 transition-colors">
+                            {feature.description}
+                          </div>
                         </div>
                       </td>
-                      <td className="py-4 px-6 text-center border-b border-gray-800">
-                        {typeof item.starter === 'boolean' ? (
-                          item.starter ? (
+                      <td className="py-4 px-6 text-center">
+                        {typeof feature.basic === 'boolean' ? (
+                          feature.basic ? (
                             <Check className="w-5 h-5 text-green-400 mx-auto" />
                           ) : (
-                            <Minus className="w-5 h-5 text-gray-400 mx-auto" />
+                            <Minus className="w-5 h-5 text-gray-600 mx-auto" />
                           )
                         ) : (
-                          <span className="text-gray-300">{item.starter}</span>
+                          <span className="text-gray-300">{feature.basic}</span>
                         )}
                       </td>
-                      <td className="py-4 px-6 text-center border-b border-gray-800">
-                        {typeof item.professional === 'boolean' ? (
-                          item.professional ? (
+                      <td className="py-4 px-6 text-center">
+                        {typeof feature.standard === 'boolean' ? (
+                          feature.standard ? (
                             <Check className="w-5 h-5 text-green-400 mx-auto" />
                           ) : (
-                            <Minus className="w-5 h-5 text-gray-400 mx-auto" />
+                            <Minus className="w-5 h-5 text-gray-600 mx-auto" />
                           )
                         ) : (
-                          <span className="text-gray-300">{item.professional}</span>
+                          <span className="text-gray-300">{feature.standard}</span>
                         )}
                       </td>
-                      <td className="py-4 px-6 text-center border-b border-gray-800">
-                        {typeof item.enterprise === 'boolean' ? (
-                          item.enterprise ? (
+                      <td className="py-4 px-6 text-center">
+                        {typeof feature.premium === 'boolean' ? (
+                          feature.premium ? (
                             <Check className="w-5 h-5 text-green-400 mx-auto" />
                           ) : (
-                            <Minus className="w-5 h-5 text-gray-400 mx-auto" />
+                            <Minus className="w-5 h-5 text-gray-600 mx-auto" />
                           )
                         ) : (
-                          <span className="text-gray-300">{item.enterprise}</span>
+                          <span className="text-gray-300">{feature.premium}</span>
                         )}
                       </td>
                     </tr>
                   ))}
-                </Fragment>
-              ))}
-            </tbody>
-          </table>
+                </tbody>
+              </table>
+            </div>
+          ))}
         </div>
       </div>
-    </section>
+    </div>
   );
 }

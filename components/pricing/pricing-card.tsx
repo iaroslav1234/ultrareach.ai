@@ -1,4 +1,4 @@
-import { Check } from 'lucide-react';
+import { Check, X } from 'lucide-react';
 
 interface PricingFeature {
   text: string;
@@ -9,6 +9,7 @@ interface PricingCardProps {
   description: string;
   price: string;
   features: PricingFeature[];
+  notIncluded?: PricingFeature[];
   ctaText: string;
   popular?: boolean;
 }
@@ -18,6 +19,7 @@ export function PricingCard({
   description,
   price,
   features,
+  notIncluded,
   ctaText,
   popular = false,
 }: PricingCardProps) {
@@ -56,16 +58,41 @@ export function PricingCard({
           {ctaText}
         </button>
 
-        <ul className="space-y-4">
-          {features.map((feature, index) => (
-            <li key={index} className="flex items-center gap-3">
-              <div className={`rounded-full p-1 ${popular ? 'bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400' : 'bg-gray-800'}`}>
-                <Check className="w-4 h-4" />
-              </div>
-              <span className="text-gray-300">{feature.text}</span>
-            </li>
-          ))}
-        </ul>
+        {/* Included Features */}
+        <div className="space-y-6">
+          {features.length > 0 && (
+            <div>
+              <h4 className="text-sm font-semibold text-gray-300 mb-4">What's Included:</h4>
+              <ul className="space-y-4">
+                {features.map((feature, index) => (
+                  <li key={index} className="flex items-center gap-3">
+                    <div className={`rounded-full p-1 ${popular ? 'bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400' : 'bg-gray-800'}`}>
+                      <Check className="w-4 h-4" />
+                    </div>
+                    <span className="text-gray-300">{feature.text}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          )}
+
+          {/* Not Included Features */}
+          {notIncluded && notIncluded.length > 0 && (
+            <div>
+              <h4 className="text-sm font-semibold text-gray-300 mb-4">What's Not Included:</h4>
+              <ul className="space-y-4">
+                {notIncluded.map((feature, index) => (
+                  <li key={index} className="flex items-center gap-3">
+                    <div className="rounded-full p-1 bg-gray-800">
+                      <X className="w-4 h-4 text-gray-400" />
+                    </div>
+                    <span className="text-gray-400">{feature.text}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          )}
+        </div>
       </div>
     </div>
   );

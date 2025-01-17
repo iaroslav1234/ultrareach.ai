@@ -20,62 +20,63 @@ export default function PricingPage() {
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-16">
               <h1 className="text-4xl font-bold mb-4">Simple, Transparent Pricing</h1>
-              <p className="text-xl text-gray-400">Choose the plan that's right for your business</p>
+              <p className="text-xl text-gray-400">Choose the plan that fits your real estate business</p>
             </div>
 
             <div className="grid md:grid-cols-3 gap-8">
-              {/* Starter Plan */}
+              {/* Basic Package */}
               <PricingCard
-                title="Starter"
-                description="Perfect for small businesses just getting started with voice AI"
-                price="49"
-                ctaText="Start Free Trial"
+                title="Basic Package: Essentials"
+                description="For realtors who want an efficient AI system to engage their leads and simplify follow-up processes."
+                price="299"
+                ctaText="Get Started"
                 features={[
-                  { text: "1,000 minutes of voice processing" },
-                  { text: "Basic voice customization" },
-                  { text: "Standard support" },
-                  { text: "2 voice personas" },
-                  { text: "API access" },
-                  { text: "Basic analytics" }
+                  { text: "AI-Driven Cold Calling" },
+                  { text: "CRM Integration" },
+                  { text: "Basic Reporting" },
+                  { text: "$0.20/minute (pay-as-you-go)" }
+                ]}
+                notIncluded={[
+                  { text: "Appointment scheduling" },
+                  { text: "Advanced CRM customization or analytics" }
                 ]}
               />
 
-              {/* Professional Plan */}
+              {/* Standard Package */}
               <PricingCard
-                title="Professional"
-                description="Ideal for growing businesses with advanced voice AI needs"
-                price="199"
-                ctaText="Start Free Trial"
+                title="Standard Package: Advanced Growth"
+                description="For realtors ready to save time by automating outreach and scheduling appointments."
+                price="399"
+                ctaText="Schedule Demo"
                 popular={true}
                 features={[
-                  { text: "10,000 minutes of voice processing" },
-                  { text: "Advanced voice customization" },
-                  { text: "Priority support" },
-                  { text: "5 voice personas" },
-                  { text: "Full API access" },
+                  { text: "Everything in Basic Package" },
+                  { text: "Appointment Booking" },
+                  { text: "CRM Setup & Customization" },
+                  { text: "Weekly Performance Reports" },
+                  { text: "500 included minutes" },
+                  { text: "Additional minutes at $0.20/minute" }
+                ]}
+                notIncluded={[
                   { text: "Advanced analytics" },
-                  { text: "Custom integrations" },
-                  { text: "Team collaboration" }
+                  { text: "Dedicated support" }
                 ]}
               />
 
-              {/* Enterprise Plan */}
+              {/* Premium Package */}
               <PricingCard
-                title="Enterprise"
-                description="For organizations requiring enterprise-grade voice solutions"
-                price="499"
+                title="Premium Package: Total Success"
+                description="For realtors seeking full-service automation and personalized support to maximize results."
+                price="899"
                 ctaText="Contact Sales"
                 features={[
-                  { text: "50,000 minutes of voice processing" },
-                  { text: "Enterprise voice customization" },
-                  { text: "24/7 dedicated support" },
-                  { text: "Unlimited voice personas" },
-                  { text: "Full API access" },
-                  { text: "Enterprise analytics" },
-                  { text: "Custom integrations" },
-                  { text: "Team collaboration" },
-                  { text: "SLA guarantee" },
-                  { text: "Custom deployment options" }
+                  { text: "Everything in Standard Package" },
+                  { text: "1,000 AI-Driven Minutes Included" },
+                  { text: "Advanced Follow-Ups" },
+                  { text: "Priority CRM Customization" },
+                  { text: "Dedicated Account Manager" },
+                  { text: "Advanced Analytics" },
+                  { text: "Additional minutes at $0.20/minute" }
                 ]}
               />
             </div>
