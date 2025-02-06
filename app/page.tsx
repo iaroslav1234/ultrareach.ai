@@ -2,10 +2,10 @@
 
 import React, { useState } from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
 import { Phone, Clock, CheckCircle, ChevronRight, Sparkles, Brain, Zap, Play } from 'lucide-react';
 import { Card, CardContent } from "@/components/ui/card";
 import { Header } from "@/components/header";
-import Link from 'next/link';
 
 // Pre-defined positions for floating elements
 const floatingElements = [
@@ -123,11 +123,14 @@ const LandingPage = () => {
             </p>
 
             <div className="mt-8 md:mt-10 flex flex-col sm:flex-row justify-center gap-4">
-              <button className="group relative px-6 sm:px-8 py-3 sm:py-4 bg-blue-600 rounded-full text-base sm:text-lg font-semibold overflow-hidden transition-all hover:bg-blue-700 w-full sm:w-auto">
+              <Link
+                href="/book"
+                className="group relative px-6 sm:px-8 py-3 sm:py-4 bg-blue-600 rounded-full text-base sm:text-lg font-semibold overflow-hidden transition-all hover:bg-blue-700 w-full sm:w-auto inline-flex items-center justify-center"
+              >
                 Schedule Demo
                 <div className="absolute inset-0 bg-white opacity-0 group-hover:opacity-20 transition-opacity"></div>
                 <ChevronRight className="inline-block ml-2 w-4 h-4 sm:w-5 sm:h-5 group-hover:translate-x-1 transition-transform" />
-              </button>
+              </Link>
 
               <button 
                 className="group px-6 sm:px-8 py-3 sm:py-4 bg-white/10 rounded-full text-base sm:text-lg font-semibold backdrop-blur-sm hover:bg-white/20 transition-all flex items-center justify-center gap-2 w-full sm:w-auto"
@@ -313,7 +316,12 @@ const LandingPage = () => {
                 </div>
               ))}
             </div>
-            <button className="mt-12 px-6 py-3 rounded-lg bg-[linear-gradient(110deg,#000103,45%,#1e2631,55%,#000103)] border border-slate-800 text-slate-400 font-medium hover:bg-black/50 transition-colors">Schedule Demo</button>
+            <Link
+              href="/book"
+              className="mt-12 px-6 py-3 rounded-lg bg-[linear-gradient(110deg,#000103,45%,#1e2631,55%,#000103)] border border-slate-800 text-slate-400 font-medium hover:bg-black/50 transition-colors inline-flex items-center justify-center"
+            >
+              Schedule Demo
+            </Link>
           </div>
         </div>
       </section>
@@ -425,7 +433,12 @@ const LandingPage = () => {
             Ready to revolutionize your lead response system?
           </p>
           <div className="flex items-center justify-center gap-4">
-            <button className="px-8 py-3 rounded-lg bg-[linear-gradient(110deg,#000103,45%,#1e2631,55%,#000103)] border border-slate-800 text-slate-400 font-medium hover:bg-black/50 transition-colors">Schedule Demo</button>
+            <Link
+              href="/book"
+              className="px-8 py-3 rounded-lg bg-[linear-gradient(110deg,#000103,45%,#1e2631,55%,#000103)] border border-slate-800 text-slate-400 font-medium hover:bg-black/50 transition-colors inline-flex items-center justify-center"
+            >
+              Schedule Demo
+            </Link>
           </div>
         </div>
       </section>
