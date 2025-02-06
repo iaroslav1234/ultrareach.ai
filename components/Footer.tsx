@@ -1,6 +1,5 @@
 import React from 'react';
 import Link from 'next/link';
-import Image from 'next/image';
 
 export function Footer() {
   return (
@@ -10,52 +9,42 @@ export function Footer() {
           <div>
             <h3 className="font-bold mb-4">Product</h3>
             <ul className="space-y-2">
-              <li><a href="#" className="text-gray-400 hover:text-white transition-colors">Features</a></li>
-              <li><a href="#" className="text-gray-400 hover:text-white transition-colors">Pricing</a></li>
-              <li><a href="#" className="text-gray-400 hover:text-white transition-colors">Case Studies</a></li>
-              <li><a href="#" className="text-gray-400 hover:text-white transition-colors">Reviews</a></li>
+              <li><Link href="/features" className="text-gray-400 hover:text-white transition-colors">Features</Link></li>
+              <li><Link href="/success" className="text-gray-400 hover:text-white transition-colors">Success Stories</Link></li>
+              <li><Link href="/book" className="text-gray-400 hover:text-white transition-colors">Book Demo</Link></li>
             </ul>
           </div>
           <div>
             <h3 className="font-bold mb-4">Company</h3>
             <ul className="space-y-2">
-              <li><a href="#" className="text-gray-400 hover:text-white transition-colors">About</a></li>
-              <li><a href="#" className="text-gray-400 hover:text-white transition-colors">Careers</a></li>
-              <li><a href="#" className="text-gray-400 hover:text-white transition-colors">Blog</a></li>
-              <li><a href="#" className="text-gray-400 hover:text-white transition-colors">Press</a></li>
+              <li><Link href="/about" className="text-gray-400 hover:text-white transition-colors">About</Link></li>
+              <li><Link href="/careers" className="text-gray-400 hover:text-white transition-colors">Careers</Link></li>
+              <li><Link href="/contact" className="text-gray-400 hover:text-white transition-colors">Contact</Link></li>
             </ul>
           </div>
           <div>
             <h3 className="font-bold mb-4">Resources</h3>
             <ul className="space-y-2">
-              <li><a href="#" className="text-gray-400 hover:text-white transition-colors">Documentation</a></li>
-              <li><a href="#" className="text-gray-400 hover:text-white transition-colors">Help Center</a></li>
-              <li><a href="#" className="text-gray-400 hover:text-white transition-colors">API Reference</a></li>
-              <li><a href="#" className="text-gray-400 hover:text-white transition-colors">Platform Status</a></li>
+              <li><Link href="/docs" className="text-gray-400 hover:text-white transition-colors">Documentation</Link></li>
+              <li><Link href="/help" className="text-gray-400 hover:text-white transition-colors">Help Center</Link></li>
+              <li><Link href="/status" className="text-gray-400 hover:text-white transition-colors">Platform Status</Link></li>
             </ul>
           </div>
           <div>
             <h3 className="font-bold mb-4">Legal</h3>
             <ul className="space-y-2">
-              <li><a href="#" className="text-gray-400 hover:text-white transition-colors">Privacy</a></li>
-              <li><a href="#" className="text-gray-400 hover:text-white transition-colors">Terms</a></li>
-              <li><a href="#" className="text-gray-400 hover:text-white transition-colors">Security</a></li>
-              <li><a href="#" className="text-gray-400 hover:text-white transition-colors">Cookies</a></li>
+              <li><Link href="/privacy" className="text-gray-400 hover:text-white transition-colors">Privacy</Link></li>
+              <li><Link href="/terms" className="text-gray-400 hover:text-white transition-colors">Terms</Link></li>
+              <li><Link href="/security" className="text-gray-400 hover:text-white transition-colors">Security</Link></li>
             </ul>
           </div>
         </div>
         
         <div className="flex flex-col md:flex-row justify-between items-center pt-8 border-t border-gray-800">
           <div className="flex items-center gap-4 mb-4 md:mb-0">
-            <Link href="/" className="flex items-center">
-              <Image
-                src="/logo.png"
-                alt="UltraReach Logo"
-                width={180}
-                height={40}
-                className="h-10 w-auto"
-                priority
-              />
+            <Link href="/" className="text-xl font-bold flex items-center">
+              <span className="text-white">Ultra</span>
+              <span className="text-transparent bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text [-webkit-background-clip:text]">Reach.ai</span>
             </Link>
             <span className="text-gray-400">&copy; 2025 UltraReach.ai. All rights reserved.</span>
           </div>
