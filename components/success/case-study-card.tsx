@@ -70,12 +70,10 @@ export function CaseStudyCard({
         <div className="grid grid-cols-2 gap-4">
           {metrics.map((metric, index) => (
             <div key={index} className="bg-black/30 rounded-lg p-4">
-              <div className="text-sm text-gray-400 mb-1">{metric.label}</div>
-              <div className="text-2xl font-bold">
+              <div className="text-sm font-semibold text-white mb-2">{metric.label}</div>
+              <div className="text-2xl font-bold text-white">
                 {metric.prefix}
-                <span className={`text-transparent ${gradientClasses.text}`}>
-                  {metric.value}
-                </span>
+                {metric.value}
                 {metric.suffix}
               </div>
             </div>
