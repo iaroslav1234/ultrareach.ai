@@ -96,6 +96,12 @@ export function OpenPositions() {
     selectedDepartment === 'All' || position.department === selectedDepartment
   );
 
+  const handleApply = (position: string) => {
+    const subject = encodeURIComponent(`Application for ${position} Position`);
+    const body = encodeURIComponent(`Hi UltraReach AI team,\n\nI am interested in applying for the ${position} position.\n\n`);
+    window.location.href = `mailto:careers@ultrareach.ai?subject=${subject}&body=${body}`;
+  };
+
   return (
     <section id="open-positions" className="relative py-24">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -164,9 +170,15 @@ export function OpenPositions() {
                       </div>
                     </div>
                   </div>
-                  <button className="px-6 py-3 rounded-lg bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 text-white font-medium hover:opacity-90 transition-opacity whitespace-nowrap">
-                    Apply Now
-                  </button>
+                  <div className="mt-6 flex justify-between items-center gap-4">
+                    <div className="text-sm text-gray-400 whitespace-nowrap">{position.location}</div>
+                    <button
+                      onClick={() => handleApply(position.title)}
+                      className="px-6 py-2 rounded-lg bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 text-white font-medium hover:opacity-90 transition-opacity whitespace-nowrap"
+                    >
+                      Apply Now
+                    </button>
+                  </div>
                 </div>
               </CardContent>
             </Card>

@@ -1,3 +1,5 @@
+'use client';
+
 import { FileText, Phone, Users, CheckCircle, ArrowRight } from 'lucide-react';
 
 const steps = [
@@ -28,6 +30,13 @@ const steps = [
 ];
 
 export function ApplicationProcess() {
+  const scrollToOpenPositions = () => {
+    const element = document.getElementById('open-positions');
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
     <section className="py-24 bg-gray-900/50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -67,7 +76,10 @@ export function ApplicationProcess() {
         </div>
 
         <div className="mt-16 text-center">
-          <button className="px-8 py-3 rounded-lg bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 text-white font-medium hover:opacity-90 transition-opacity">
+          <button 
+            onClick={scrollToOpenPositions}
+            className="px-8 py-3 rounded-lg bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 text-white font-medium hover:opacity-90 transition-opacity"
+          >
             View Open Positions
           </button>
         </div>

@@ -39,22 +39,23 @@ export function CultureSection() {
   return (
     <section className="relative py-24">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">
+        <h2 className="text-3xl md:text-4xl font-bold text-center mb-4">
           Our{' '}
           <span className="text-transparent bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text [-webkit-background-clip:text]">
             Culture
           </span>
         </h2>
-        <p className="text-xl text-gray-400 max-w-3xl mx-auto text-center mb-12">
-            At UltraReach, we're building more than just technology. 
-            We're creating a workplace where innovation thrives and every voice matters.
+        <p className="text-xl text-gray-400 max-w-3xl mx-auto text-center mb-4">
+          At UltraReach, we're building more than just technology. 
+          We're creating a workplace where innovation thrives and every voice matters.
+        </p>
+        <div className="text-xl text-gray-400 max-w-3xl mx-auto text-center mb-8">
+          <p>
+            We&apos;re building a culture of innovation, collaboration, and growth.
+            <br />
+            It&apos;s not just about what we build, but how we build it
           </p>
-        <p className="text-gray-400">
-          We&apos;re building a culture of innovation, collaboration, and growth
-        </p>
-        <p className="text-gray-400">
-          It&apos;s not just about what we build, but how we build it
-        </p>
+        </div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {values.map((value, index) => (
             <div key={index} className="p-6 rounded-xl bg-gray-900/50 border border-gray-800">
