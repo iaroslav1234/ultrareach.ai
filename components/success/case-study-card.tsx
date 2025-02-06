@@ -34,6 +34,12 @@ export function CaseStudyCard({
   gradientVia,
   gradientTo
 }: CaseStudyProps) {
+  const gradientClasses = {
+    industry: `bg-gradient-to-r from-${gradientFrom} via-${gradientVia} to-${gradientTo}`,
+    text: `bg-gradient-to-r from-${gradientFrom} via-${gradientVia} to-${gradientTo} bg-clip-text [-webkit-background-clip:text]`,
+    bar: `bg-gradient-to-r from-${gradientFrom} via-${gradientVia} to-${gradientTo}`
+  };
+
   return (
     <motion.div
       initial={{ opacity: 0, y: 20 }}
@@ -43,7 +49,7 @@ export function CaseStudyCard({
     >
       <div className="p-8">
         <div className="flex items-center gap-4 mb-6">
-          <div className={`text-sm font-medium px-3 py-1 rounded-full bg-gradient-to-r from-${gradientFrom} via-${gradientVia} to-${gradientTo} text-white`}>
+          <div className={`text-sm font-medium px-3 py-1 rounded-full text-white ${gradientClasses.industry}`}>
             {industry}
           </div>
         </div>
@@ -67,7 +73,7 @@ export function CaseStudyCard({
               <div className="text-sm text-gray-400 mb-1">{metric.label}</div>
               <div className="text-2xl font-bold">
                 {metric.prefix}
-                <span className={`text-transparent bg-gradient-to-r from-${gradientFrom} via-${gradientVia} to-${gradientTo} bg-clip-text [-webkit-background-clip:text]`}>
+                <span className={`text-transparent ${gradientClasses.text}`}>
                   {metric.value}
                 </span>
                 {metric.suffix}
@@ -77,7 +83,7 @@ export function CaseStudyCard({
         </div>
       </div>
 
-      <div className={`h-1 w-full bg-gradient-to-r from-${gradientFrom} via-${gradientVia} to-${gradientTo}`} />
+      <div className={`h-1 w-full ${gradientClasses.bar}`} />
     </motion.div>
   );
 }
