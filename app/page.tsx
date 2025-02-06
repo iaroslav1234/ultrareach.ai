@@ -6,6 +6,7 @@ import Link from 'next/link';
 import { Phone, Clock, CheckCircle, ChevronRight, Sparkles, Brain, Zap, Play } from 'lucide-react';
 import { Card, CardContent } from "@/components/ui/card";
 import { Header } from "@/components/header";
+import { SuccessMetrics } from '@/components/success-metrics';
 
 // Pre-defined positions for floating elements
 const floatingElements = [
@@ -195,7 +196,7 @@ const LandingPage = () => {
                 Over Traditional Call Handling?
               </span>
             </h2>
-            <p className="text-xl text-gray-400 max-w-3xl mx-auto">
+            <p className="text-xl text-gray-400 mb-8 max-w-3xl mx-auto">
               See how UltraReach AI helps real estate agents stop missing leads and book more appointments compared to traditional call handling methods.
             </p>
           </div>
@@ -327,7 +328,7 @@ const LandingPage = () => {
       </section>
 
       {/* Features Section */}
-      <section className="py-24 relative overflow-hidden">
+      <section className="relative py-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">
@@ -366,6 +367,9 @@ const LandingPage = () => {
           </div>
         </div>
       </section>
+
+      {/* Success Metrics Section */}
+      <SuccessMetrics />
 
       {/* Testimonials Section */}
       <section className="py-24 relative bg-gray-900/50">
