@@ -197,7 +197,7 @@ const LandingPage = () => {
           </div>
 
           {/* Mobile View - Boxes */}
-          <div className="space-y-6 lg:hidden flex justify-center">
+          <div className="space-y-6 lg:hidden max-w-xl mx-auto">
             {[
               {
                 feature: "Instant Lead Response",
@@ -240,17 +240,17 @@ const LandingPage = () => {
                 ai: "AI follows best practices every time, ensuring no missed opportunities."
               }
             ].map((item, index) => (
-              <div key={index} className="rounded-xl border border-gray-800 bg-gray-900/50 overflow-hidden w-full md:w-1/2 lg:w-1/3 xl:w-1/4">
-                <div className="p-4 border-b border-gray-800 bg-gray-900/80 text-center">
-                  <h3 className="text-lg font-bold">{item.feature}</h3>
+              <div key={index} className="rounded-xl border border-gray-800 bg-gray-900/50 overflow-hidden">
+                <div className="p-4 border-b border-gray-800 bg-gray-900/80">
+                  <h3 className="text-lg font-bold text-center">{item.feature}</h3>
                 </div>
-                <div className="p-4 border-b border-gray-800 text-center">
-                  <div className="text-sm uppercase tracking-wider text-gray-500 mb-2">Traditional Call Handling</div>
-                  <div className="text-gray-400">{item.traditional}</div>
+                <div className="p-4 border-b border-gray-800">
+                  <div className="text-sm uppercase tracking-wider text-gray-500 mb-2 text-center">Traditional Call Handling</div>
+                  <div className="text-gray-400 text-center">{item.traditional}</div>
                 </div>
-                <div className="p-4 text-center">
-                  <div className="text-sm uppercase tracking-wider text-gray-500 mb-2">UltraReach AI</div>
-                  <div className="text-blue-400">{item.ai}</div>
+                <div className="p-4">
+                  <div className="text-sm uppercase tracking-wider text-gray-500 mb-2 text-center">UltraReach AI</div>
+                  <div className="text-blue-400 text-center">{item.ai}</div>
                 </div>
               </div>
             ))}
