@@ -111,19 +111,23 @@ const LandingPage = () => {
               </div>
             </div>
             <h1 className="text-4xl sm:text-5xl md:text-7xl font-bold tracking-tight text-white mb-6">
-              Your AI Army of<br className="hidden sm:block" />
-              <span className="text-transparent bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text [-webkit-background-clip:text]">Super Agents</span>
+              Your AI Army of <br className="block sm:hidden" />
+              <span className="text-transparent bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text [-webkit-background-clip:text]">
+                Super Agents
+              </span>
             </h1>
             <p className="mt-3 max-w-md mx-auto text-lg sm:text-xl text-gray-400 md:mt-5 md:text-2xl md:max-w-3xl">
               While other agents sleep, your AI assistant closes deals.
               <span className="text-transparent bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text [-webkit-background-clip:text] block mt-2">Welcome to the future of real estate.</span>
             </p>
+
             <div className="mt-8 md:mt-10 flex flex-col sm:flex-row justify-center gap-4">
               <button className="group relative px-6 sm:px-8 py-3 sm:py-4 bg-blue-600 rounded-full text-base sm:text-lg font-semibold overflow-hidden transition-all hover:bg-blue-700 w-full sm:w-auto">
                 Schedule Demo
                 <div className="absolute inset-0 bg-white opacity-0 group-hover:opacity-20 transition-opacity"></div>
                 <ChevronRight className="inline-block ml-2 w-4 h-4 sm:w-5 sm:h-5 group-hover:translate-x-1 transition-transform" />
               </button>
+
               <button 
                 className="group px-6 sm:px-8 py-3 sm:py-4 bg-white/10 rounded-full text-base sm:text-lg font-semibold backdrop-blur-sm hover:bg-white/20 transition-all flex items-center justify-center gap-2 w-full sm:w-auto"
                 onClick={() => setIsVideoModalOpen(true)}
@@ -174,6 +178,145 @@ const LandingPage = () => {
         </div>
       </div>
 
+      {/* Comparison Table Section */}
+      <section className="py-24 relative">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">
+              Why Choose AI-Powered Voice Solutions{' '}
+              <span className="hidden lg:block mt-2 text-transparent bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text [-webkit-background-clip:text]">
+                Over Traditional Call Handling?
+              </span>
+              <span className="lg:hidden text-transparent bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text [-webkit-background-clip:text]">
+                Over Traditional Call Handling?
+              </span>
+            </h2>
+            <p className="text-xl text-gray-400 max-w-3xl mx-auto">
+              See how UltraReach AI helps real estate agents stop missing leads and book more appointments compared to traditional call handling methods.
+            </p>
+          </div>
+
+          {/* Mobile View - Boxes */}
+          <div className="space-y-6 lg:hidden">
+            {[
+              {
+                feature: "Instant Lead Response",
+                traditional: "Missed calls from buyers lead to lost deals. Agents are often too busy to answer immediately.",
+                ai: "AI answers 100% of calls instantly and engages leads before they move on."
+              },
+              {
+                feature: "24/7 Availability",
+                traditional: "Calls go to voicemail after hours, and most buyers won't leave a message.",
+                ai: "Always available—never lets a serious buyer slip through."
+              },
+              {
+                feature: "Lead Qualification",
+                traditional: "Wastes time on unqualified buyers, tire-kickers, and renters.",
+                ai: "AI pre-qualifies leads, so you only talk to serious buyers and sellers."
+              },
+              {
+                feature: "Follow-Up & Nurturing",
+                traditional: "Assistants or agents forget to follow up, or it takes too long.",
+                ai: "AI follows up automatically to keep leads engaged."
+              },
+              {
+                feature: "Scalability",
+                traditional: "Limited by how many calls an agent or assistant can handle.",
+                ai: "Handles unlimited calls simultaneously without extra cost."
+              },
+              {
+                feature: "Multilingual Support",
+                traditional: "Agents or assistants must manually handle non-English leads.",
+                ai: "AI supports multiple languages, ensuring no lead is lost due to language barriers."
+              },
+              {
+                feature: "Cost Efficiency",
+                traditional: "Hiring an assistant or call center is expensive and requires ongoing salaries.",
+                ai: "AI provides consistent service at a fixed, low cost—no salaries, no overtime."
+              },
+              {
+                feature: "Consistent Lead Handling",
+                traditional: "Assistants vary in skill and reliability; calls may be mishandled.",
+                ai: "AI follows best practices every time, ensuring no missed opportunities."
+              }
+            ].map((item, index) => (
+              <div key={index} className="rounded-xl border border-gray-800 bg-gray-900/50 overflow-hidden">
+                <div className="p-4 border-b border-gray-800 bg-gray-900/80">
+                  <h3 className="text-lg font-bold">{item.feature}</h3>
+                </div>
+                <div className="p-4 border-b border-gray-800">
+                  <div className="text-sm uppercase tracking-wider text-gray-500 mb-2">Traditional Call Handling</div>
+                  <div className="text-gray-400">{item.traditional}</div>
+                </div>
+                <div className="p-4">
+                  <div className="text-sm uppercase tracking-wider text-gray-500 mb-2">UltraReach AI</div>
+                  <div className="text-blue-400">{item.ai}</div>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          {/* Desktop View - Table */}
+          <div className="hidden lg:block rounded-xl border border-gray-800 bg-gray-900/50">
+            <div className="overflow-x-auto">
+              <table className="w-full border-collapse">
+                <thead>
+                  <tr className="bg-gray-900/80">
+                    <th className="py-5 px-6 text-left text-lg font-semibold w-1/4">Feature</th>
+                    <th className="py-5 px-6 text-left text-lg font-semibold w-[37.5%]">Traditional Call Handling</th>
+                    <th className="py-5 px-6 text-left text-lg font-semibold w-[37.5%]">UltraReach AI</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {[
+                    ["Instant Lead Response", "Missed calls from buyers lead to lost deals. Agents are often too busy to answer immediately.", "AI answers 100% of calls instantly and engages leads before they move on."],
+                    ["24/7 Availability", "Calls go to voicemail after hours, and most buyers won't leave a message.", "Always available—never lets a serious buyer slip through."],
+                    ["Lead Qualification", "Wastes time on unqualified buyers, tire-kickers, and renters.", "AI pre-qualifies leads, so you only talk to serious buyers and sellers."],
+                    ["Follow-Up & Nurturing", "Assistants or agents forget to follow up, or it takes too long.", "AI follows up automatically to keep leads engaged."],
+                    ["Scalability", "Limited by how many calls an agent or assistant can handle.", "Handles unlimited calls simultaneously without extra cost."],
+                    ["Multilingual Support", "Agents or assistants must manually handle non-English leads.", "AI supports multiple languages, ensuring no lead is lost due to language barriers."],
+                    ["Cost Efficiency", "Hiring an assistant or call center is expensive and requires ongoing salaries.", "AI provides consistent service at a fixed, low cost—no salaries, no overtime."],
+                    ["Consistent Lead Handling", "Assistants vary in skill and reliability; calls may be mishandled.", "AI follows best practices every time, ensuring no missed opportunities."]
+                  ].map(([feature, traditional, ai], index) => (
+                    <tr key={index} className="border-t border-gray-800 hover:bg-gray-900/40 transition-colors">
+                      <td className="py-5 px-6 font-medium">{feature}</td>
+                      <td className="py-5 px-6 text-gray-400">{traditional}</td>
+                      <td className="py-5 px-6 text-blue-400">{ai}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Use Cases Section */}
+      <section className="py-24 relative">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6">
+          <div className="text-center">
+            <h2 className="text-3xl md:text-4xl font-bold mb-6">Tailored for{' '}<span className="text-transparent bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text [-webkit-background-clip:text]">Real Estate Professionals</span></h2>
+            <p className="text-xl text-gray-400 mb-8 max-w-3xl mx-auto">Whether you're a solo agent or running a large brokerage, our AI calling solution scales with your needs</p>
+          </div>
+
+          <div className="flex justify-center gap-4 mb-12">{(Object.keys(useCases) as UseCaseKey[]).map((key) => (<button key={key} onClick={() => setActiveTab(key)} className={`px-6 py-3 rounded-lg font-medium transition-colors ${activeTab === key ? 'bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 text-white' : 'text-gray-400 hover:text-white'}`}>{useCases[key].title}</button>))}</div>
+
+          <div className="text-center max-w-3xl mx-auto">
+            <h3 className="text-2xl font-bold mb-4">{useCases[activeTab].title}</h3>
+            <p className="text-gray-400 mb-12 max-w-2xl mx-auto">{useCases[activeTab].description}</p>
+            <div className="grid grid-cols-1 gap-6">
+              {useCases[activeTab].features.map((feature, index) => (
+                <div key={index} className="flex items-center justify-center gap-3">
+                  <svg className="w-6 h-6 text-blue-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path></svg>
+                  <p className="text-lg text-gray-300">{feature}</p>
+                </div>
+              ))}
+            </div>
+            <button className="mt-12 px-6 py-3 rounded-lg bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 text-white font-medium hover:opacity-90 transition-opacity">Get Started</button>
+          </div>
+        </div>
+      </section>
+
       {/* Features Section */}
       <section className="py-24 relative overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -192,13 +335,15 @@ const LandingPage = () => {
           <div className="grid md:grid-cols-2 gap-8">
             {features.map((feature, index) => (
               <Card key={index} className="bg-gray-900/50 border-gray-800 hover:border-gray-700 transition-all">
-                <CardContent className="p-6">
-                  <div className="w-12 h-12 rounded-lg bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 flex items-center justify-center mb-4">
-                    {feature.icon}
+                <CardContent className="p-6 text-center">
+                  <div className="flex justify-center mb-4">
+                    <div className="w-12 h-12 rounded-lg bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 flex items-center justify-center">
+                      {feature.icon}
+                    </div>
                   </div>
                   <h3 className="text-xl font-bold mb-2">{feature.title}</h3>
                   <p className="text-gray-400 mb-4">{feature.description}</p>
-                  <div className="flex items-center gap-2 text-sm">
+                  <div className="flex items-center justify-center gap-2 text-sm">
                     <div className="w-5 h-5 rounded-full bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 flex items-center justify-center">
                       <CheckCircle className="w-3 h-3 text-white" />
                     </div>
@@ -209,64 +354,6 @@ const LandingPage = () => {
                 </CardContent>
               </Card>
             ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Use Cases Section */}
-      <section className="py-24 relative">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">
-              Tailored for{' '}
-              <span className="text-transparent bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text [-webkit-background-clip:text]">
-                Real Estate Professionals
-              </span>
-            </h2>
-            <p className="text-xl text-gray-400 max-w-3xl mx-auto">
-              Whether you're a solo agent or running a large brokerage, our AI calling solution scales with your needs
-            </p>
-          </div>
-
-          <div className="flex justify-center gap-4 mb-12">
-            {(Object.keys(useCases) as UseCaseKey[]).map((key) => (
-              <button
-                key={key}
-                onClick={() => setActiveTab(key)}
-                className={`px-6 py-3 rounded-lg font-medium transition-colors ${
-                  activeTab === key
-                    ? 'bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 text-white'
-                    : 'text-gray-400 hover:text-white'
-                }`}
-              >
-                {useCases[key].title}
-              </button>
-            ))}
-          </div>
-
-          <div className="grid md:grid-cols-2 gap-12 items-center">
-            <div>
-              <h3 className="text-2xl font-bold mb-4">{useCases[activeTab].title}</h3>
-              <p className="text-gray-400 mb-6">{useCases[activeTab].description}</p>
-              <ul className="space-y-4">
-                {useCases[activeTab].features.map((feature, index) => (
-                  <li key={index} className="flex items-center gap-3">
-                    <div className="w-5 h-5 rounded-full bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 flex items-center justify-center">
-                      <CheckCircle className="w-3 h-3 text-white" />
-                    </div>
-                    <span className="text-gray-300">{feature}</span>
-                  </li>
-                ))}
-              </ul>
-              <button className="mt-8 px-6 py-3 rounded-lg bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 text-white font-medium hover:opacity-90 transition-opacity">
-                Get Started
-              </button>
-            </div>
-            <div className="relative">
-              <div className="aspect-video rounded-xl overflow-hidden bg-gray-900/50 border border-gray-800">
-                {/* Add demo video or animation here */}
-              </div>
-            </div>
           </div>
         </div>
       </section>
@@ -282,152 +369,67 @@ const LandingPage = () => {
               </span>
             </h2>
             <p className="text-xl text-gray-400 max-w-3xl mx-auto">
-              Here&apos;s what our clients are saying about UltraReach
+              See what real estate professionals are saying about UltraReach AI
             </p>
           </div>
 
           <div className="grid md:grid-cols-3 gap-8">
             {[
               {
-                name: "Sarah Chen",
-                role: "Top 1% Agent, Century 21",
-                quote: "UltraReach's AI has doubled my showing appointments while cutting my work hours in half. It's like having a full-time assistant who never sleeps.",
-                image: "/testimonials/sarah.jpg"
+                quote: "UltraReach AI has completely transformed how I handle leads. I never miss a call, and my conversion rates have skyrocketed.",
+                author: "Sarah Johnson",
+                role: "Real Estate Agent",
+                company: "Century 21"
               },
               {
-                name: "Michael Rodriguez",
-                role: "Team Lead, RE/MAX Elite",
-                quote: "The lead qualification is incredible. My team only speaks to serious buyers now, and our conversion rates have skyrocketed.",
-                image: "/testimonials/michael.jpg"
+                quote: "The AI qualification process saves me countless hours. I only speak with serious buyers who are ready to move forward.",
+                author: "Michael Chen",
+                role: "Broker",
+                company: "RE/MAX"
               },
               {
-                name: "Emily Thompson",
-                role: "Broker, Keller Williams",
-                quote: "Finally, a solution that actually understands real estate! The AI handles property inquiries better than most agents I've trained.",
-                image: "/testimonials/emily.jpg"
+                quote: "Having a 24/7 AI assistant has given me a huge competitive advantage. My business has grown 3x since implementing UltraReach.",
+                author: "Lisa Rodriguez",
+                role: "Team Leader",
+                company: "Keller Williams"
               }
             ].map((testimonial, index) => (
-              <Card key={index} className="bg-gray-900/50 border-gray-800 hover:border-gray-700 transition-all">
-                <CardContent className="p-6">
-                  <div className="flex items-start gap-4 mb-4">
-                    <div className="w-12 h-12 rounded-full overflow-hidden bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 p-[1px]">
-                      <div className="w-full h-full rounded-full overflow-hidden">
-                        <Image
-                          src={testimonial.image}
-                          alt={testimonial.name}
-                          width={48}
-                          height={48}
-                          className="rounded-full"
-                        />
-                      </div>
-                    </div>
-                    <div>
-                      <h3 className="font-bold">{testimonial.name}</h3>
-                      <p className="text-sm text-gray-400">{testimonial.role}</p>
-                    </div>
+              <div key={index} className="relative">
+                <div className="absolute inset-0 bg-gradient-to-r from-blue-400/10 via-purple-400/10 to-pink-400/10 rounded-2xl blur-xl"></div>
+                <div className="relative rounded-2xl border border-gray-800 bg-gray-900/90 p-8">
+                  <p className="text-gray-300 mb-6">{testimonial.quote}</p>
+                  <div>
+                    <div className="font-medium text-white">{testimonial.author}</div>
+                    <div className="text-sm text-gray-400">{testimonial.role}</div>
+                    <div className="text-sm text-gray-400">{testimonial.company}</div>
                   </div>
-                  <p className="text-gray-300">&quot;{testimonial.quote}&quot;</p>
-                </CardContent>
-              </Card>
+                </div>
+              </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* ROI Calculator Section */}
+      {/* Final CTA Section */}
       <section className="py-24 relative">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">
-              Calculate Your{' '}
-              <span className="text-transparent bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text [-webkit-background-clip:text]">
-                ROI
-              </span>
-            </h2>
-            <p className="text-xl text-gray-400 max-w-3xl mx-auto">
-              See how much time and money you could save with AI-powered calling
-            </p>
-          </div>
-
-          <Card className="bg-gray-900/50 border-gray-800">
-            <CardContent className="p-8">
-              <div className="grid md:grid-cols-2 gap-12">
-                <div>
-                  <h3 className="text-2xl font-bold mb-6">Monthly Impact</h3>
-                  <div className="space-y-6">
-                    <div>
-                      <div className="flex justify-between mb-2">
-                        <span className="text-gray-400">Calls Handled</span>
-                        <span className="font-bold text-transparent bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text [-webkit-background-clip:text]">500+</span>
-                      </div>
-                      <div className="h-2 bg-gray-800 rounded-full overflow-hidden">
-                        <div className="h-full w-full bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400"></div>
-                      </div>
-                    </div>
-                    <div>
-                      <div className="flex justify-between mb-2">
-                        <span className="text-gray-400">Hours Saved</span>
-                        <span className="font-bold text-transparent bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text [-webkit-background-clip:text]">120+</span>
-                      </div>
-                      <div className="h-2 bg-gray-800 rounded-full overflow-hidden">
-                        <div className="h-full w-4/5 bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400"></div>
-                      </div>
-                    </div>
-                    <div>
-                      <div className="flex justify-between mb-2">
-                        <span className="text-gray-400">Additional Showings</span>
-                        <span className="font-bold text-transparent bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text [-webkit-background-clip:text]">50+</span>
-                      </div>
-                      <div className="h-2 bg-gray-800 rounded-full overflow-hidden">
-                        <div className="h-full w-3/5 bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400"></div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div className="flex flex-col justify-center">
-                  <div className="text-center">
-                    <div className="text-4xl font-bold mb-2">
-                      <span className="text-transparent bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text [-webkit-background-clip:text]">
-                        10x ROI
-                      </span>
-                    </div>
-                    <p className="text-gray-400 mb-8">Average return on investment</p>
-                    <button className="px-8 py-3 rounded-lg bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 text-white font-medium hover:opacity-90 transition-opacity">
-                      Calculate Your ROI
-                    </button>
-                  </div>
-                </div>
-              </div>
-            </CardContent>
-          </Card>
-        </div>
-      </section>
-
-      {/* CTA Section */}
-      <section className="py-24 relative">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="relative rounded-2xl overflow-hidden">
-            <div className="absolute inset-0 bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 opacity-10"></div>
-            <div className="relative p-12 text-center">
-              <h2 className="text-4xl md:text-5xl font-bold mb-6">
-                Ready to{' '}
-                <span className="text-transparent bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text [-webkit-background-clip:text]">
-                  Transform
-                </span>
-                {' '}Your Business?
-              </h2>
-              <p className="text-xl text-gray-400 max-w-2xl mx-auto mb-8">
-                Join the future of real estate. Start converting more leads into showings today.
-              </p>
-              <div className="flex flex-col sm:flex-row justify-center gap-4">
-                <button className="px-8 py-4 rounded-lg bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 text-white font-medium hover:opacity-90 transition-opacity">
-                  Get Started Now
-                </button>
-                <button className="px-8 py-4 rounded-lg bg-gray-900 text-white font-medium hover:bg-gray-800 transition-colors">
-                  Contact Sales
-                </button>
-              </div>
-            </div>
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 text-center">
+          <h2 className="text-3xl md:text-4xl font-bold mb-6">
+            Ready to{' '}
+            <span className="text-transparent bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text [-webkit-background-clip:text]">
+              Transform Your Business
+            </span>
+            ?
+          </h2>
+          <p className="text-xl text-gray-400 mb-10">
+            Join the growing community of real estate professionals who never miss a lead
+          </p>
+          <div className="flex items-center justify-center gap-4">
+            <button className="px-8 py-3 rounded-lg bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 text-white font-medium hover:opacity-90 transition-opacity">
+              Get Started Now
+            </button>
+            <button className="px-8 py-3 rounded-lg border border-gray-700 text-white font-medium hover:bg-gray-800 transition-colors">
+              Schedule Demo
+            </button>
           </div>
         </div>
       </section>
