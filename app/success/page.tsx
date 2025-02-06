@@ -2,31 +2,32 @@ import { Header } from "@/components/header"
 import { CaseStudyCard } from "@/components/success/case-study-card"
 import { ImpactMetric } from "@/components/success/impact-metric"
 import { BarChart3, Clock, TrendingUp, Users } from "lucide-react"
+import { Testimonials } from "@/components/success/testimonials"
 
 const impactMetrics = [
   {
     iconName: "Clock",
-    value: "< 1min",
+    value: "0.8s",
     label: "Average Response Time",
-    description: "Instant lead engagement 24/7"
+    description: "Lightning-fast AI responses to every inquiry"
   },
   {
     iconName: "Users",
-    value: "10x",
-    label: "Lead Handling Capacity",
-    description: "Scale operations without adding staff"
+    value: "24/7",
+    label: "Service Availability",
+    description: "Always-on support for your clients"
   },
   {
     iconName: "TrendingUp",
-    value: "+187%",
-    label: "Conversion Rate Increase",
-    description: "Higher success rate through AI"
+    value: "95%",
+    label: "Resolution Rate",
+    description: "Accurate and effective responses"
   },
   {
     iconName: "BarChart3",
-    value: "$4.2M",
-    label: "Client Cost Savings",
-    description: "Annual operational savings"
+    value: "60%",
+    label: "Cost Reduction",
+    description: "Significant operational savings"
   }
 ]
 
@@ -126,10 +127,25 @@ export default function Success() {
             </div>
 
             {/* Case Studies */}
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-24">
               {caseStudies.map((study, index) => (
                 <CaseStudyCard key={index} {...study} />
               ))}
+            </div>
+
+            {/* Testimonials */}
+            <div className="mb-24">
+              <h2 className="text-4xl font-bold text-center mb-4">
+                What Our{' '}
+                <span className="text-transparent bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text [-webkit-background-clip:text]">
+                  Clients
+                </span>{' '}
+                Say
+              </h2>
+              <p className="text-xl text-gray-400 text-center max-w-3xl mx-auto mb-12">
+                Real feedback from real estate professionals who have transformed their business with UltraReach AI
+              </p>
+              <Testimonials />
             </div>
           </div>
         </section>
