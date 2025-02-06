@@ -1,5 +1,5 @@
 import React from 'react';
-import { Globe, Users, Zap, Heart } from 'lucide-react';
+import { Globe, Users, Zap, Heart, Star, Target } from 'lucide-react';
 import { Card, CardContent } from "@/components/ui/card";
 
 const values = [
@@ -22,6 +22,16 @@ const values = [
     icon: <Heart className="w-6 h-6 text-white" />,
     title: "Work-Life Balance",
     description: "We value your well-being and encourage a healthy balance between work and personal life."
+  },
+  {
+    icon: <Star className="w-6 h-6 text-white" />,
+    title: "Growth Mindset",
+    description: "Continuous learning and personal development are core to our culture. We invest in your growth."
+  },
+  {
+    icon: <Target className="w-6 h-6 text-white" />,
+    title: "Impact Focused",
+    description: "Every team member's work directly contributes to transforming the real estate industry."
   }
 ];
 
@@ -45,7 +55,7 @@ export function CultureSection() {
         <p className="text-gray-400">
           It&apos;s not just about what we build, but how we build it
         </p>
-        <div className="grid md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {values.map((value, index) => (
             <div key={index} className="p-6 rounded-xl bg-gray-900/50 border border-gray-800">
               <div className="w-12 h-12 rounded-lg bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 flex items-center justify-center mb-4">

@@ -97,7 +97,7 @@ export function OpenPositions() {
   );
 
   return (
-    <section className="relative py-24">
+    <section id="open-positions" className="relative py-24">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
           <h2 className="text-4xl font-bold text-transparent bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text [-webkit-background-clip:text] mb-4">

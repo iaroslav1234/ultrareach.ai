@@ -1,4 +1,4 @@
-import { GraduationCap, Users, Award, Compass, Check } from 'lucide-react';
+import { GraduationCap, Users, Award, Compass, Check, Rocket, Globe } from 'lucide-react';
 import { Card, CardContent } from "@/components/ui/card";
 
 const programs = [
@@ -41,6 +41,26 @@ const programs = [
       "Industry conferences worldwide",
       "Opportunities to speak"
     ]
+  },
+  {
+    icon: <Rocket className="w-6 h-6 text-white" />,
+    title: "Innovation Projects",
+    description: "Lead and contribute to cutting-edge AI and technology initiatives",
+    features: [
+      "Lead innovative projects",
+      "Work with cutting-edge AI",
+      "Drive technological advancement"
+    ]
+  },
+  {
+    icon: <Globe className="w-6 h-6 text-white" />,
+    title: "Global Collaboration",
+    description: "Work with team members across different time zones and cultures",
+    features: [
+      "Cross-cultural experience",
+      "International teamwork",
+      "Global perspective"
+    ]
   }
 ];
 
@@ -59,7 +79,7 @@ export function GrowthDevelopment() {
           We invest in your growth with comprehensive learning and development programs
         </p>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {programs.map((program, index) => (
             <div key={index} className="p-6 rounded-xl bg-gray-900/50 border border-gray-800">
               <div className="w-12 h-12 rounded-lg bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 flex items-center justify-center mb-4">
