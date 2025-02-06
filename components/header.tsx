@@ -8,8 +8,8 @@ const menuItems = [
   { name: 'Home', href: '/' },
   { name: 'About', href: '/about' },
   { name: 'Success Stories', href: '/success' },
-  { name: 'Careers', href: '/careers' },
-  { name: 'Pricing', href: '/pricing' }
+  { name: 'Features', href: '/features' },
+  { name: 'Careers', href: '/careers' }
 ];
 
 export function Header() {
