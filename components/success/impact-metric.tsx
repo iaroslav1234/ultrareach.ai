@@ -1,10 +1,25 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import * as Icons from 'lucide-react';
+import { BarChart3, Bot, Clock, Globe2, Languages, LineChart, MessageSquare, Shield, Sparkles, TrendingUp, Users, Zap, type LucideIcon } from 'lucide-react';
+
+const iconMap: Record<string, LucideIcon> = {
+  Clock,
+  Users,
+  TrendingUp,
+  BarChart3,
+  Bot,
+  Globe2,
+  Languages,
+  LineChart,
+  MessageSquare,
+  Shield,
+  Sparkles,
+  Zap
+};
 
 interface ImpactMetricProps {
-  iconName: keyof typeof Icons;
+  iconName: keyof typeof iconMap;
   value: string;
   label: string;
   description: string;
@@ -12,7 +27,7 @@ interface ImpactMetricProps {
 }
 
 export function ImpactMetric({ iconName, value, label, description, index }: ImpactMetricProps) {
-  const Icon = Icons[iconName];
+  const Icon = iconMap[iconName];
 
   return (
     <motion.div
