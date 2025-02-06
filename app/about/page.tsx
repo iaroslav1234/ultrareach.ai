@@ -2,38 +2,48 @@ import React from 'react';
 import Image from 'next/image';
 import { Card, CardContent } from "@/components/ui/card"
 import { Header } from "@/components/header"
-import { Brain, Zap, Users, Shield, LineChart, Linkedin, Mail } from "lucide-react"
+import { Brain, Zap, Users, Shield, LineChart, Linkedin, Mail, Mic, TrendingUp, Cloud, RefreshCw } from "lucide-react"
 
 const milestones = [
   {
-    year: "2023",
-    quarter: "Q2",
-    title: "The Beginning",
-    description: "Founded with a vision to transform real estate communication"
+    date: "2023 Q2",
+    title: "Laying the Foundation",
+    description: "Initial AI architecture designed, focusing on natural language understanding and real estate-specific lead qualification."
   },
   {
-    year: "2023",
-    quarter: "Q3",
-    title: "First Beta",
-    description: "Launched beta with 50 top-performing agents"
+    date: "2023 Q3",
+    title: "First AI Prototype",
+    description: "Built the first AI voice model capable of handling basic real estate inquiries and booking appointments with scripted responses."
   },
   {
-    year: "2023",
-    quarter: "Q4",
-    title: "Public Launch",
-    description: "Official launch with advanced AI capabilities"
+    date: "2023 Q4",
+    title: "Beta Testing & Machine Learning Enhancements",
+    description: "Tested with 50 realtors, gathering real-world conversations to improve AI's ability to understand intent and qualify leads more effectively."
   },
   {
-    year: "2024",
-    quarter: "Q1",
-    title: "Rapid Growth",
-    description: "Reached 1000+ active agents"
+    date: "2024 Q1",
+    title: "Conversational AI Breakthrough",
+    description: "Upgraded AI to handle open-ended conversations, improving response accuracy and making interactions feel more human-like."
   },
   {
-    year: "2024",
-    quarter: "Q2",
-    title: "Series A",
-    description: "Secured $12M in Series A funding"
+    date: "2024 Q2",
+    title: "Real-Time Learning & Adaptation",
+    description: "Enabled real-time learning, allowing AI to adjust responses based on user behavior and common real estate inquiries."
+  },
+  {
+    date: "2024 Q3",
+    title: "Advanced Lead Scoring & Filtering",
+    description: "Developed AI-driven lead scoring to prioritize high-intent buyers and filter out non-serious inquiries automatically."
+  },
+  {
+    date: "2024 Q4",
+    title: "Enhanced Personalization & Multilingual Support",
+    description: "Introduced multilingual capabilities and personalized responses based on past interactions, making the AI even more adaptive to different client types."
+  },
+  {
+    date: "2025 Q1",
+    title: "Next-Gen AI with Predictive Insights",
+    description: "Incorporated predictive analytics, allowing AI to identify hot leads before realtors even pick up the phone, optimizing lead conversion rates."
   }
 ]
 
@@ -64,48 +74,6 @@ const values = [
   }
 ]
 
-const team = [
-  {
-    name: "Sarah Chen",
-    role: "CEO & Co-founder",
-    photo: "/team/sarah.jpg",
-    bio: "Former tech lead at Zillow, passionate about AI transformation",
-    expertise: ["AI Strategy", "Real Estate Tech", "Team Leadership"],
-    linkedin: "https://linkedin.com/in/sarahchen"
-  },
-  {
-    name: "Michael Rodriguez",
-    role: "CTO & Co-founder",
-    photo: "/team/michael.jpg",
-    bio: "AI researcher with 10+ years in NLP and machine learning",
-    expertise: ["Machine Learning", "NLP", "System Architecture"],
-    linkedin: "https://linkedin.com/in/michaelrodriguez"
-  },
-  {
-    name: "Emily Thompson",
-    role: "Head of Product",
-    photo: "/team/emily.jpg",
-    bio: "Product leader focused on agent-first experiences",
-    expertise: ["Product Strategy", "UX Design", "Agent Relations"],
-    linkedin: "https://linkedin.com/in/emilythompson"
-  },
-  {
-    name: "David Kim",
-    role: "Lead AI Engineer",
-    photo: "/team/david.jpg",
-    bio: "AI specialist with focus on conversational systems",
-    expertise: ["Deep Learning", "Conversational AI", "Python"],
-    linkedin: "https://linkedin.com/in/davidkim"
-  }
-]
-
-const partners = [
-  { name: "TechStars", logo: "/partners/techstars.png" },
-  { name: "RealTech Ventures", logo: "/partners/realtech.png" },
-  { name: "PropTech Innovation", logo: "/partners/proptech.png" },
-  { name: "AI Ventures", logo: "/partners/aiventures.png" }
-]
-
 const impactMetrics = [
   { label: "Calls Handled", value: "2.5M+" },
   { label: "Agents Empowered", value: "5,000+" },
@@ -118,34 +86,42 @@ export default function About() {
     <main className="min-h-screen bg-black text-white">
       <Header />
 
-      {/* Hero Section */}
-      <section className="relative py-24">
-        <div className="absolute inset-0 bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 opacity-10 animate-gradient"></div>
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
-          <h1 className="text-5xl md:text-7xl font-bold text-transparent bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text [-webkit-background-clip:text] text-center mb-8">
-            Revolutionizing Real Estate<br />Communication Through AI
-          </h1>
-          <p className="text-lg text-gray-400">
-            We&apos;re on a mission to revolutionize the real estate industry
-          </p>
+      {/* Timeline */}
+      <section className="py-24 relative">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">
+              The Evolution of UltraReach AI
+              <br />
+              <span className="text-transparent bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text [-webkit-background-clip:text]">
+                Transforming Real Estate Call Handling
+              </span>
+            </h2>
+          </div>
 
-          {/* Timeline */}
           <div className="relative">
-            <div className="absolute left-1/2 transform -translate-x-1/2 h-full w-px bg-gradient-to-b from-blue-400 via-purple-400 to-pink-400"></div>
-            <div className="space-y-16">
+            {/* Timeline line */}
+            <div className="absolute left-1/2 transform -translate-x-px h-full w-0.5 bg-gradient-to-b from-blue-400 via-purple-400 to-pink-400"></div>
+
+            <div className="space-y-12">
               {milestones.map((milestone, index) => (
-                <div key={index} className={`flex items-center gap-8 ${index % 2 === 0 ? 'flex-row-reverse' : ''}`}>
-                  <div className={`w-1/2 ${index % 2 === 0 ? 'text-right' : ''}`}>
-                    <div className="text-sm text-gray-400">{milestone.year} {milestone.quarter}</div>
-                    <h3 className="text-xl font-bold text-transparent bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text [-webkit-background-clip:text]">
-                      {milestone.title}
-                    </h3>
-                    <p className="text-gray-300">{milestone.description}</p>
+                <div key={index} className="relative group">
+                  <div className={`flex items-center ${index % 2 === 0 ? 'justify-end md:pr-8' : 'justify-start md:pl-8'} md:w-1/2 ${index % 2 === 0 ? 'ml-auto' : ''}`}>
+                    <div className="p-6 bg-gray-900/50 border border-gray-800 rounded-xl hover:bg-gray-900/70 transition-all max-w-xl w-full group-hover:border-gray-700">
+                      <div className="flex items-center justify-between mb-1">
+                        <div className="font-bold text-transparent bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text [-webkit-background-clip:text]">
+                          {milestone.date}
+                        </div>
+                      </div>
+                      <h3 className="text-xl font-bold mb-2">{milestone.title}</h3>
+                      <p className="text-gray-400">{milestone.description}</p>
+                    </div>
                   </div>
-                  <div className="relative">
-                    <div className="w-4 h-4 rounded-full bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400"></div>
+                  
+                  {/* Timeline dot */}
+                  <div className="absolute top-6 left-1/2 transform -translate-x-1/2 flex items-center justify-center">
+                    <div className="h-4 w-4 rounded-full bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 group-hover:scale-125 transition-transform"></div>
                   </div>
-                  <div className="w-1/2"></div>
                 </div>
               ))}
             </div>
@@ -178,142 +154,157 @@ export default function About() {
         </div>
       </section>
 
-      {/* Technology Overview */}
+      {/* Our Technology */}
       <section className="py-24">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl md:text-4xl font-bold text-center text-transparent bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text [-webkit-background-clip:text] mb-16">
-            Our Technology
-          </h2>
-          <div className="grid md:grid-cols-2 gap-16">
-            <div className="space-y-8">
-              <div>
-                <h3 className="text-2xl font-bold mb-4">AI Capabilities</h3>
-                <ul className="space-y-4">
-                  <li className="flex items-start gap-3">
-                    <div className="w-6 h-6 rounded-full bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 flex items-center justify-center flex-shrink-0">
-                      <Zap className="w-4 h-4 text-white" />
-                    </div>
-                    <div>
-                      <strong className="block mb-1">Natural Language Processing</strong>
-                      <p className="text-gray-300">Advanced understanding of real estate terminology and client intent</p>
-                    </div>
-                  </li>
-                  <li className="flex items-start gap-3">
-                    <div className="w-6 h-6 rounded-full bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 flex items-center justify-center flex-shrink-0">
-                      <LineChart className="w-4 h-4 text-white" />
-                    </div>
-                    <div>
-                      <strong className="block mb-1">Predictive Analytics</strong>
-                      <p className="text-gray-300">Data-driven insights for better decision making</p>
-                    </div>
-                  </li>
-                  <li className="flex items-start gap-3">
-                    <div className="w-6 h-6 rounded-full bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 flex items-center justify-center flex-shrink-0">
-                      <Shield className="w-4 h-4 text-white" />
-                    </div>
-                    <div>
-                      <strong className="block mb-1">Security & Privacy</strong>
-                      <p className="text-gray-300">Enterprise-grade security with end-to-end encryption</p>
-                    </div>
-                  </li>
-                </ul>
-              </div>
-            </div>
-            <div>
-              <Image 
-                src="/tech-overview.png" 
-                alt="Technology Overview" 
-                width={400}
-                height={400}
-                className="rounded-xl border border-gray-800"
-              />
-            </div>
+        <div className="max-w-6xl mx-auto px-4 sm:px-6">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">Our Technology</h2>
+            <p className="text-xl text-gray-400 max-w-3xl mx-auto">
+              UltraReach AI combines cutting-edge artificial intelligence with deep real estate expertise to create
+              an unparalleled lead response system. Our technology understands context, learns from every interaction,
+              and delivers consistently professional responses.
+            </p>
           </div>
-        </div>
-      </section>
 
-      {/* Impact Metrics */}
-      <section className="py-24 bg-gray-900/50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl md:text-4xl font-bold text-center text-transparent bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text [-webkit-background-clip:text] mb-16">
-            Our Impact
-          </h2>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-            {impactMetrics.map((metric, index) => (
-              <div key={index} className="text-center">
-                <div className="text-4xl font-bold text-transparent bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text [-webkit-background-clip:text] mb-2">
-                  {metric.value}
-                </div>
-                <div className="text-gray-400">{metric.label}</div>
+          <div className="space-y-12">
+            {[
+              {
+                title: "Natural Conversations",
+                description: "Our AI engages in natural, context-aware conversations that feel human and professional."
+              },
+              {
+                title: "24/7 Availability",
+                description: "Never miss a lead with round-the-clock response capability and consistent performance."
+              },
+              {
+                title: "Continuous Learning",
+                description: "Our system learns from every interaction, constantly improving its understanding and responses."
+              },
+              {
+                title: "Real Estate Expertise",
+                description: "Built specifically for real estate, understanding industry terminology and best practices."
+              }
+            ].map((feature, index) => (
+              <div key={index} className="p-6 bg-gray-900/50 border border-gray-800 rounded-xl hover:bg-gray-900/70 transition-all">
+                <h3 className="text-xl font-bold mb-2">{feature.title}</h3>
+                <p className="text-gray-400">{feature.description}</p>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Team */}
+      {/* Technology Stack Section */}
       <section className="py-24">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl md:text-4xl font-bold text-center text-transparent bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text [-webkit-background-clip:text] mb-16">
-            Our Team
-          </h2>
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {team.map((member, index) => (
-              <div key={index} className="text-center">
-                <div className="flex items-center gap-4 mb-4">
-                  <Image
-                    src={member.photo}
-                    alt={member.name}
-                    width={200}
-                    height={200}
-                    className="rounded-lg object-cover"
-                  />
+        <div className="max-w-6xl mx-auto px-4 sm:px-6">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">Technology Stack & Infrastructure</h2>
+            <p className="text-xl text-gray-400">Powered by cutting-edge technology and robust infrastructure</p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {[
+              {
+                title: "Natural Language Processing",
+                description: "Advanced NLP engine capable of understanding context, intent, and nuanced real estate queries",
+                Icon: Brain
+              },
+              {
+                title: "Voice Recognition System",
+                description: "High-accuracy voice recognition optimized for real estate terminology and multiple accents",
+                Icon: Mic
+              },
+              {
+                title: "Real-time Learning Models",
+                description: "Self-improving AI models that adapt to new scenarios and conversation patterns",
+                Icon: TrendingUp
+              },
+              {
+                title: "Cloud Infrastructure",
+                description: "Scalable cloud architecture ensuring 99.9% uptime and fast response times",
+                Icon: Cloud
+              },
+              {
+                title: "Integration APIs",
+                description: "Robust API system for seamless integration with CRM and real estate platforms",
+                Icon: RefreshCw
+              },
+              {
+                title: "Security Framework",
+                description: "Enterprise-grade security with end-to-end encryption and compliance measures",
+                Icon: Shield
+              }
+            ].map((item, index) => (
+              <div key={index} className="p-6 bg-gray-900/50 border border-gray-800 rounded-xl hover:bg-gray-900/70 transition-all">
+                <div className="mb-4">
+                  <item.Icon className="w-8 h-8 text-blue-400" />
                 </div>
-                <h3 className="text-xl font-bold mb-2">{member.name}</h3>
-                <div className="text-gray-400">{member.role}</div>
-                <p className="text-gray-400">
-                  {member.bio}
-                </p>
-                <div className="text-sm text-gray-400">
-                  <strong>Expertise:</strong> {member.expertise.join(', ')}
-                </div>
-                <a 
-                  href={member.linkedin} 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="text-blue-500 hover:text-blue-700 transition-colors"
-                >
-                  LinkedIn
-                </a>
+                <h3 className="text-xl font-bold mb-2">{item.title}</h3>
+                <p className="text-gray-400">{item.description}</p>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Partners */}
+      {/* R&D Focus Section */}
       <section className="py-24 bg-gray-900/50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl md:text-4xl font-bold text-center text-transparent bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text [-webkit-background-clip:text] mb-16">
-            Our Partners
-          </h2>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-            {partners.map((partner, index) => (
-              <div key={index} className="text-center">
-                <Image
-                  src={partner.logo}
-                  alt={partner.name}
-                  width={150}
-                  height={150}
-                  className="rounded-lg mx-auto"
-                />
-                <div className="text-gray-400">{partner.name}</div>
+        <div className="max-w-6xl mx-auto px-4 sm:px-6">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">Research & Development Focus</h2>
+            <p className="text-xl text-gray-400">Pushing the boundaries of AI in real estate</p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {[
+              {
+                title: "Next-Gen Voice Synthesis",
+                description: "Developing ultra-natural voice synthesis with emotional intelligence",
+                progress: 85
+              },
+              {
+                title: "Emotional Intelligence",
+                description: "Advanced sentiment analysis for better understanding of client needs",
+                progress: 75
+              },
+              {
+                title: "Predictive Lead Scoring",
+                description: "AI-driven algorithms to identify high-potential leads",
+                progress: 90
+              },
+              {
+                title: "Multi-modal Communication",
+                description: "Seamless switching between voice, text, and visual interactions",
+                progress: 70
+              },
+              {
+                title: "Context Understanding",
+                description: "Deep learning models for enhanced conversation context awareness",
+                progress: 80
+              },
+              {
+                title: "Cross-platform Integration",
+                description: "Universal compatibility with real estate platforms and tools",
+                progress: 85
+              }
+            ].map((item, index) => (
+              <div key={index} className="p-6 border border-gray-800 rounded-xl hover:bg-gray-900/70 transition-all">
+                <h3 className="text-xl font-bold mb-2">{item.title}</h3>
+                <p className="text-gray-400 mb-4">{item.description}</p>
+                <div className="relative pt-1">
+                  <div className="h-2 bg-gray-800 rounded-full">
+                    <div
+                      className="h-2 rounded-full bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400"
+                      style={{ width: `${item.progress}%` }}
+                    ></div>
+                  </div>
+                  <span className="text-sm text-gray-400 mt-2 inline-block">
+                    Development Progress: {item.progress}%
+                  </span>
+                </div>
               </div>
             ))}
           </div>
-          <p className="text-gray-400">
-            We&apos;re proud to work with some of the industry&apos;s most innovative companies
-          </p>
         </div>
       </section>
 
