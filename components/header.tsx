@@ -9,6 +9,7 @@ const menuItems = [
   { name: 'About', href: '/about' },
   { name: 'Success Stories', href: '/success' },
   { name: 'Features', href: '/features' },
+  { name: 'Insights', href: '/insights' },
   { name: 'Careers', href: '/careers' }
 ];
 
