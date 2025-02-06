@@ -5,6 +5,7 @@ import Image from 'next/image';
 import { Phone, Clock, CheckCircle, ChevronRight, Sparkles, Brain, Zap, Play } from 'lucide-react';
 import { Card, CardContent } from "@/components/ui/card";
 import { Header } from "@/components/header";
+import Link from 'next/link';
 
 // Pre-defined positions for floating elements
 const floatingElements = [
@@ -312,7 +313,7 @@ const LandingPage = () => {
                 </div>
               ))}
             </div>
-            <button className="mt-12 px-6 py-3 rounded-lg bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 text-white font-medium hover:opacity-90 transition-opacity">Get Started</button>
+            <button className="mt-12 px-6 py-3 rounded-lg bg-[linear-gradient(110deg,#000103,45%,#1e2631,55%,#000103)] border border-slate-800 text-slate-400 font-medium hover:bg-black/50 transition-colors">Schedule Demo</button>
           </div>
         </div>
       </section>
@@ -420,16 +421,11 @@ const LandingPage = () => {
             </span>
             ?
           </h2>
-          <p className="text-xl text-gray-400 mb-10">
-            Join the growing community of real estate professionals who never miss a lead
+          <p className="text-xl text-gray-400 text-center mb-8">
+            Ready to revolutionize your lead response system?
           </p>
           <div className="flex items-center justify-center gap-4">
-            <button className="px-8 py-3 rounded-lg bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 text-white font-medium hover:opacity-90 transition-opacity">
-              Get Started Now
-            </button>
-            <button className="px-8 py-3 rounded-lg border border-gray-700 text-white font-medium hover:bg-gray-800 transition-colors">
-              Schedule Demo
-            </button>
+            <button className="px-8 py-3 rounded-lg bg-[linear-gradient(110deg,#000103,45%,#1e2631,55%,#000103)] border border-slate-800 text-slate-400 font-medium hover:bg-black/50 transition-colors">Schedule Demo</button>
           </div>
         </div>
       </section>
