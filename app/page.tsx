@@ -201,43 +201,43 @@ const LandingPage = () => {
             {[
               {
                 feature: "Instant Lead Response",
-                traditional: "Missed calls from buyers lead to lost deals. Agents are often too busy to answer immediately.",
-                ai: "AI answers 100% of calls instantly and engages leads before they move on."
+                traditional: "Missed calls from buyers lead to lost deals.\nAgents are often too busy to answer immediately.",
+                ai: "AI answers 100% of calls instantly and engages leads\nbefore they move on."
               },
               {
                 feature: "24/7 Availability",
-                traditional: "Calls go to voicemail after hours, and most buyers won't leave a message.",
+                traditional: "Calls go to voicemail after hours,\nand most buyers won't leave a message.",
                 ai: "Always available—never lets a serious buyer slip through."
               },
               {
                 feature: "Lead Qualification",
-                traditional: "Wastes time on unqualified buyers, tire-kickers, and renters.",
-                ai: "AI pre-qualifies leads, so you only talk to serious buyers and sellers."
+                traditional: "Wastes time on unqualified buyers,\ntire-kickers, and renters.",
+                ai: "AI pre-qualifies leads, so you only talk to\nserious buyers and sellers."
               },
               {
                 feature: "Follow-Up & Nurturing",
-                traditional: "Assistants or agents forget to follow up, or it takes too long.",
+                traditional: "Assistants or agents forget to follow up,\nor it takes too long.",
                 ai: "AI follows up automatically to keep leads engaged."
               },
               {
                 feature: "Scalability",
-                traditional: "Limited by how many calls an agent or assistant can handle.",
-                ai: "Handles unlimited calls simultaneously without extra cost."
+                traditional: "Limited by how many calls an agent\nor assistant can handle.",
+                ai: "Handles unlimited calls simultaneously\nwithout extra cost."
               },
               {
                 feature: "Multilingual Support",
-                traditional: "Agents or assistants must manually handle non-English leads.",
-                ai: "AI supports multiple languages, ensuring no lead is lost due to language barriers."
+                traditional: "Agents or assistants must manually\nhandle non-English leads.",
+                ai: "AI supports multiple languages, ensuring no lead\nis lost due to language barriers."
               },
               {
                 feature: "Cost Efficiency",
-                traditional: "Hiring an assistant or call center is expensive and requires ongoing salaries.",
-                ai: "AI provides consistent service at a fixed, low cost—no salaries, no overtime."
+                traditional: "Hiring an assistant or call center is expensive\nand requires ongoing salaries.",
+                ai: "AI provides consistent service at a fixed, low cost—\nno salaries, no overtime."
               },
               {
                 feature: "Consistent Lead Handling",
-                traditional: "Assistants vary in skill and reliability; calls may be mishandled.",
-                ai: "AI follows best practices every time, ensuring no missed opportunities."
+                traditional: "Assistants vary in skill and reliability;\ncalls may be mishandled.",
+                ai: "AI follows best practices every time,\nensuring no missed opportunities."
               }
             ].map((item, index) => (
               <div key={index} className="rounded-xl border border-gray-800 bg-gray-900/50 overflow-hidden">
@@ -246,11 +246,11 @@ const LandingPage = () => {
                 </div>
                 <div className="p-4 border-b border-gray-800">
                   <div className="text-sm uppercase tracking-wider text-gray-500 mb-2 text-center">Traditional Call Handling</div>
-                  <div className="text-gray-400 text-center">{item.traditional}</div>
+                  <div className="text-gray-400 text-center whitespace-pre-line">{item.traditional}</div>
                 </div>
                 <div className="p-4">
                   <div className="text-sm uppercase tracking-wider text-gray-500 mb-2 text-center">UltraReach AI</div>
-                  <div className="text-blue-400 text-center">{item.ai}</div>
+                  <div className="text-blue-400 text-center whitespace-pre-line">{item.ai}</div>
                 </div>
               </div>
             ))}
